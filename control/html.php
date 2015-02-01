@@ -25,16 +25,16 @@ echo'
 				<a class="navbar-brand">國立嘉義大學社團活動系統</a>
 			</div>
 			<div class="navbar-collapse collapse" style="height: 1px;">
-				<ul class="nav navbar-nav">';
-				}
-				function tail(){
-					echo'
+				<ul class="nav navbar-nav">
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
 	</div>
 	<div class="container">
-		<div class="starter-template">
+		<div class="starter-template">';
+				}
+				function tail(){
+					echo'
 		</div>
 	</div>
 </body>
