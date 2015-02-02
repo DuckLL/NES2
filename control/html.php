@@ -53,17 +53,17 @@ echo '
 				if (empty($_SESSION['account'])){
 					echo '
 					<li><a href="register" class="glyphicon glyphicon-pencil">註冊</a></li>
-					<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> 登入</a></li>';
+					<li><a href="login" class="glyphicon glyphicon-log-in">登入</a></li>';
 				} 
 				elseif ($_SESSION['account']!='admin') {
 					echo '
 					<li><a href="edit.php" class="glyphicon glyphicon-user">資料維護</a></li>
-					<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>';
+					<li><a href="logout.php" class="glyphicon glyphicon-log-out">登出</a></li>';
 				} 
 				else{
 					echo '
 					<li><a href="edit.php" class="glyphicon glyphicon-user">資料維護</a></li>
-					<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>';
+					<li><a href="logout.php" class="glyphicon glyphicon-log-out">登出</a></li>';
 				}
 echo '
 				</ul>
