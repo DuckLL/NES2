@@ -1,7 +1,7 @@
 <?php
 require_once('database.php');
 if(empty($_POST['account'])||empty($_POST['password'])){
-	header("Location: index.php");
+	header("Location: ../error");
 	exit;
 }
 $paccount=$_POST['account'];
@@ -13,13 +13,13 @@ if($_POST['password']==$row[password]){
 	$_SESSION['account']=$row[account];
 	$_SESSION['name']=$row[name];
 	if($_POST['account']=='admin')
-		header("Location: ../admin/index.php");
+		header("Location: ../admin/");
 	else
-		header("Location: ../index.php");
+		header("Location: ../");
 }
 else{
 	echo "<script type=\"text/javascript\">";
-	echo 'alert("password error!");';
+	echo 'alert("account or password error!");';
 	echo "history.go(-1);";
 	echo "</script>";
 }
