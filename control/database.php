@@ -1,4 +1,5 @@
 <?php
+session_start();
 $dsn='mysql:dbname=nes;host=localhost';
 $user='nes';
 $password='nesnes';
