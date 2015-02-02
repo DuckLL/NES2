@@ -2,6 +2,7 @@
 require_once('database.php');
 if(empty($_POST['account'])||empty($_POST['password'])||empty($_POST['password2'])||empty($_POST['name'])||empty($_POST['school'])||empty($_POST['email'])||empty($_POST['phone'])){
 	header("Location: ../error");
+	exit;
 }
 $sql = "SELECT count(*) FROM member WHERE account = '{$_POST['account']}'";
 $rs = $db->query($sql);
@@ -13,12 +14,15 @@ if($row[0]==1){
 	echo "</script>";
 	exit;
 }
-$hashpassword=md5(md5(md5($_POST['password'])));
-$sql = "INSERT INTO member (account, password, name, school, email, phone) VALUES ('{$_POST['account']}', '{$hashpassword}', '{$_POST['name']}', '{$_POST['school']}', '{$_POST['email']}', '{$_POST['phone']}')";
-$rs = $db->prepare($sql);
-$rs->execute();
-echo "<script type=\"text/javascript\">";
-echo 'alert("success!");';
-echo "history.go(-2);";
-echo "</script>";
+else{
+	$hashpassword=md5(md5(md5($_POST['password'])));
+	$sql = "INSERT INTO member (account, password, name, school, email, phone) VALUES ('{$_POST['account']}', '{$hashpassword}', '{$_POST['name']}', '{$_POST['school']}', '{$_POST['email']}', '{$_POST['phone']}')";
+	$rs = $db->prepare($sql);
+	$rs->execute();
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("success!");';
+	echo "history.go(-2);";
+	echo "</script>";
+	exit;
+}
 ?>
