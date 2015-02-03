@@ -33,7 +33,7 @@ echo'
 					<li><a href="index" class="glyphicon glyphicon-home">公告</a></li>
 					<li><a href="show" class="glyphicon glyphicon-search">登記狀況</a></li>';
 				} 
-				elseif ($_SESSION['account']!='admin') { //average user
+				elseif ($_SESSION['account']!=='admin') { //average user
 					echo '
 					<li><a href="index" class="glyphicon glyphicon-home">公告</a></li>
 					<li><a href="show" class="glyphicon glyphicon-search">登記狀況</a></li>
@@ -55,7 +55,7 @@ echo '
 					<li><a href="register" class="glyphicon glyphicon-pencil">註冊</a></li>
 					<li><a href="login" class="glyphicon glyphicon-log-in">登入</a></li>';
 				} 
-				elseif ($_SESSION['account']!='admin') {
+				elseif ($_SESSION['account']!=='admin') {
 					echo '
 					<li><a href="edit.php" class="glyphicon glyphicon-user">資料維護</a></li>
 					<li><a href="logout.php" class="glyphicon glyphicon-log-out">登出</a></li>';
