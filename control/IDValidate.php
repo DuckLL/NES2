@@ -4,7 +4,7 @@ $type = ( isset($_POST['type']) ) ? $_POST['type'] : $_GET['type'];
 $sql = "SELECT count(*) FROM member WHERE account = '" . str_replace("\'", "''", $_GET['user_name']) . "'";
 $rs = $db->query($sql);
 $row = $rs->fetch();
-if($row[0]===0)
+if($row[0]==0)
 {
 	$ret = '<div class="label label-success">此帳號可以使用</div>';
 }
