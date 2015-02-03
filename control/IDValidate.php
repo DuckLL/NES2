@@ -1,6 +1,5 @@
 <?php
 require_once('database.php');
-$type = ( isset($_POST['type']) ) ? $_POST['type'] : $_GET['type'];
 $sql = "SELECT count(*) FROM member WHERE account = '" . str_replace("\'", "''", $_GET['user_name']) . "'";
 $rs = $db->query($sql);
 $row = $rs->fetch();
