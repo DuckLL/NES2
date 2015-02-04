@@ -3,8 +3,11 @@ require_once('database.php');
 if(empty($_POST['account'])||empty($_POST['school'])||empty($_POST['email'])||empty($_POST['phone'])){
 	$ans="資料不完整";
 }
+elseif(!ereg("^[a-zA-Z0-9]+$",$_POST['account'])){
+	$ans="資料錯誤";
+}
 else{
-	$sql = "SELECT * FROM member WHERE account = '" . str_replace("\'", "''", $_POST['account']) . "'";
+	$sql = "SELECT * FROM member WHERE account = '{$_POST['account']}'";
 	$rs = $db->query($sql);
 	$row = $rs->fetch();
 	if($row[account]===$_POST['account'] && $row[school]===$_POST['school'] && $row[email]===$_POST['email'] && $row[phone]===$_POST['phone']){
