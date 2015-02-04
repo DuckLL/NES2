@@ -9,9 +9,9 @@ $(document).ready(function(){
 		if ($('#account').val().length >=1) {
 			$.ajax( {
 				url: 'control/IDValidate.php',
-				type: 'GET',
+				type: 'POST',
 				data: {
-					user_name: $('#account').val()
+					account: $('#account').val()
 				},
 				error: function(xhr) {
 					alert('Ajax request 發生錯誤');
