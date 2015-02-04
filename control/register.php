@@ -43,7 +43,7 @@ if($row[0]==1){
 	exit;
 }
 else{
-	$hashpassword=md5(md5(md5($_POST['password'])));
+	$hashpassword=md5(sha1(md5($_POST['password'])));
 	$sql = "INSERT INTO member (account, password, name, school, email, phone) VALUES ('{$_POST['account']}', '{$hashpassword}', '{$_POST['name']}', '{$_POST['school']}', '{$_POST['email']}', '{$_POST['phone']}')";
 	$rs = $db->prepare($sql);
 	$rs->execute();
