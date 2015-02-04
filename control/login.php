@@ -14,7 +14,7 @@ if(!ereg("^[a-zA-Z0-9]+$",$_POST['account'])){
 $sql="SELECT * FROM member WHERE account='{$_POST[account]}'";
 $rs = $db->query($sql);
 $row = $rs->fetch();
-if(md5(md5(md5($_POST['password'])))===$row[password]){
+if(md5(sha1(md5($_POST['password'])))===$row[password]){
 	$_SESSION['account']=$row[account];
 	$_SESSION['name']=$row[name];
 	if($_SESSION['account']=='admin')

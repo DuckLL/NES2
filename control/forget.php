@@ -12,7 +12,7 @@ else{
 	$row = $rs->fetch();
 	if($row[account]===$_POST['account'] && $row[school]===$_POST['school'] && $row[email]===$_POST['email'] && $row[phone]===$_POST['phone']){
 		$newpassword=substr(md5(rand()),0,6);
-		$sql = "UPDATE member SET password = '".md5(md5(md5($newpassword)))."' WHERE account = '{$row[account]}'";
+		$sql = "UPDATE member SET password = '".md5(sha1(md5($newpassword)))."' WHERE account = '{$row[account]}'";
 		$rs = $db->prepare($sql);
 		$rs->execute();
 		$ans="新密碼：".$newpassword."<br>請登入後 進入資料維護 修改密碼";
