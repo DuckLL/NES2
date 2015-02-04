@@ -30,30 +30,30 @@ echo'
 				<ul class="nav navbar-nav">';
 				if (empty($_SESSION['account'])){ //not logged in
 					echo '
-					<li><a href="index" class="glyphicon glyphicon-home"> 公告</a></li>
-					<li><a href="show" class="glyphicon glyphicon-search"> 登記狀況</a></li>';
+					<li><a href="index.php" class="glyphicon glyphicon-home"> 公告</a></li>
+					<li><a href="show.php" class="glyphicon glyphicon-search"> 登記狀況</a></li>';
 				} 
 				elseif ($_SESSION['account']!=='admin') { //average user
 					echo '
-					<li><a href="index" class="glyphicon glyphicon-home"> 公告</a></li>
-					<li><a href="show" class="glyphicon glyphicon-search"> 登記狀況</a></li>
-					<li><a href="new" class="glyphicon glyphicon-plus"> 申請登記</a></li>';
+					<li><a href="index.php" class="glyphicon glyphicon-home"> 公告</a></li>
+					<li><a href="show.php" class="glyphicon glyphicon-search"> 登記狀況</a></li>
+					<li><a href="new.php" class="glyphicon glyphicon-plus"> 申請登記</a></li>';
 				} 
 				else{ //adminitrator
 					echo '
-					<li><a href="admin/post"> 管理公告</a></li>
-					<li><a href="admin/event"> 管理登記</a></li>
-					<li><a href="admin/member"> 會員管理</a></li>
-					<li><a href="admin/place"> 場地管理</a></li>
-					<li><a href="admin/date"> 時間管理</a></li>';
+					<li><a href="admin/post.php"> 管理公告</a></li>
+					<li><a href="admin/event.php"> 管理登記</a></li>
+					<li><a href="admin/member.php"> 會員管理</a></li>
+					<li><a href="admin/place.php"> 場地管理</a></li>
+					<li><a href="admin/date.php"> 時間管理</a></li>';
 				}
 echo '
 				</ul>
 				<ul class="nav navbar-nav navbar-right">';
 				if (empty($_SESSION['account'])){
 					echo '
-					<li><a href="register" class="glyphicon glyphicon-pencil"> 註冊</a></li>
-					<li><a href="login" class="glyphicon glyphicon-log-in"> 登入</a></li>';
+					<li><a href="register.php" class="glyphicon glyphicon-pencil"> 註冊</a></li>
+					<li><a href="login.php" class="glyphicon glyphicon-log-in"> 登入</a></li>';
 				} 
 				else{
 					echo '
