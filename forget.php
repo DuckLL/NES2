@@ -14,6 +14,6 @@ head();
 <br>
 <input type="submit" class="btn btn-primary" value="送出" id="submit" style="float:right;">
 <label id="newpassword"></label>
-<?php>
+<?php
 tail();
 ?>

@@ -1,7 +1,7 @@
 <?php
 require_once('database.php');
 if(empty($_POST['account'])||empty($_POST['password'])){
-	header("Location: ../error");
+	header("Location: ../error.php");
 	exit;
 }
 if(!ereg("^[a-zA-Z0-9]+$",$_POST['account'])){
@@ -15,7 +15,6 @@ $sql="SELECT * FROM member WHERE account='{$_POST[account]}'";
 $rs = $db->query($sql);
 $row = $rs->fetch();
 if(md5(md5(md5($_POST['password'])))===$row[password]){
-	$_SESSION['id']=$row[id];
 	$_SESSION['account']=$row[account];
 	$_SESSION['name']=$row[name];
 	if($_SESSION['account']=='admin')

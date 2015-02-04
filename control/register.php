@@ -1,7 +1,7 @@
 <?php
 require_once('database.php');
 if(empty($_POST['account'])||empty($_POST['password'])||empty($_POST['password2'])||empty($_POST['name'])||empty($_POST['school'])||empty($_POST['email'])||empty($_POST['phone'])){
-	header("Location: ../error");
+	header("Location: ../error.php");
 	exit;
 }
 if(!ereg("^[a-zA-Z0-9]+$",$_POST['account'])){
