@@ -7,7 +7,7 @@ echo'
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>國立嘉義大學社團活動系統</title>
+	<title>國立嘉義大學大型活動申請系統</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/starter-template.css" rel="stylesheet" type="text/css">
 	<link href="css/style.css" rel="stylesheet" type="text/css">
@@ -19,12 +19,12 @@ echo'
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="sr-only">國立嘉義大學社團活動系統</span>
+					<span class="sr-only">國立嘉義大學大型活動申請系統</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php">國立嘉義大學社團活動系統</a>
+				<a class="navbar-brand" href="index.php">國立嘉義大學大型活動申請系統</a>
 			</div>
 			<div class="navbar-collapse collapse" style="height: 1px;">
 				<ul class="nav navbar-nav">';
