@@ -75,4 +75,22 @@ echo'
 </body>
 </html>';
 }
+function modalStart($id){
+echo '
+<div id="'.$id.'" class="modal fade">
+	<div class="modal-dialog">
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		<h4 class="modal-title">忘記密碼</h4>
+      		</div>
+	      	<div class="modal-body">';
+}
+function modalEnd(){
+echo '
+			</div>
+    	</div><!-- /.modal-content -->
+  	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->';
+}
 ?>
