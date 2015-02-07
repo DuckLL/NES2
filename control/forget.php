@@ -1,6 +1,6 @@
 <?php
 require_once('database.php');
-if(empty($_POST['account'])||empty($_POST['school'])||empty($_POST['email'])||empty($_POST['phone'])){
+if(!isset($_POST['account'])||!isset($_POST['school'])||!isset($_POST['email'])||!isset($_POST['phone'])){
 	$ans="資料不完整";
 }
 elseif(!ereg("^[a-zA-Z0-9]+$",$_POST['account'])){
