@@ -1,6 +1,6 @@
 <?php
 require_once('database.php');
-if(empty($_POST['account'])||empty($_POST['password'])){
+if(!isset($_POST['account'])||!isset($_POST['password'])){
 	header("Location: ../error.php");
 	exit;
 }
