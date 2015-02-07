@@ -9,6 +9,6 @@ try{
 	$db->exec("set names urt8");
 }
 catch(PDOException $e){
-	dir('Database error'.$e->getMessage());
+	die('Database error'.$e->getMessage());
 }
 ?>
