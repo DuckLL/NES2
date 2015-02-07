@@ -18,7 +18,9 @@ if(!ereg("^[0-9]+$",$_POST['phone'])){
 	echo "</script>";
 	exit;
 }
-$sql = "UPDATE member SET name = '{$_POST['name']}', school = '{$_POST['school']}', phone = '{$_POST['phone']}' WHERE account = '{$_SESSION[account]}'";
+$name=mysql_escape_string($_POST['name']);
+$email=mysql_escape_string($_POST['email']);
+$sql = "UPDATE member SET name = '{$name}', school = '{$_POST['school']}', email='{$email}', phone = '{$_POST['phone']}' WHERE account = '{$_SESSION['account']}'";
 $rs = $db->prepare($sql);
 $rs->execute();
 echo "<script type=\"text/javascript\">";
