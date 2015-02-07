@@ -1,6 +1,6 @@
 <?php
 require_once('control/html.php');
-require_once('control/week.php');
+require_once('control/define.php');
 head();
 ?>
 <script src="js/new.js"></script>
@@ -12,14 +12,6 @@ head();
 				<div class="col-sm-10">
 			      <input class="form-control" name="name" size="100" required>
     			</div>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<label class="col-sm-2 control-label">申請時間</label>
-				<div class="col-sm-10">
-			      <input class="form-control" name="time" size="100" required>
-			    </div>
 			</td>
 		</tr>
 		<tr>
@@ -43,19 +35,12 @@ head();
 				<label>活動地點</label>
 				<select class="form-control" name="place" id="place"  required>
 					<?php
-					require_once('control/database.php');
-					$sql="SELECT * FROM place";
-					$rs = $db->query($sql);
-					while($row = $rs->fetch()){
-						echo "<option value=".$row[name].">".$row[name]."</option>";
+					for($i=0;$i<$placecount;$i++){
+						echo "<option value=".$place[$i].">".$place[$i]."</option>";
 					}
 					?>
 					<option value="other">其他</option>
 				</select>
-			</td>
-			<td>
-				<label>人數</label>
-				<input class="form-control" name="people" required>
 			</td>
 		</tr>
 		<tr>

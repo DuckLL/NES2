@@ -23,4 +23,13 @@ for($i=0;$i<20;$i++){
 $now=mktime();
 $nowweek=ceil(($now-$firstdaytimestamp)/(7*24*60*60));
 //echo $nowweek;
+
+//place
+$sql="SELECT * FROM place ORDER BY id";
+$rs = $db->query($sql);
+$placecount=0;
+while($row = $rs->fetch()){
+	$place[$placecount]=$row[name];
+	$placecount++;
+}
 ?>
