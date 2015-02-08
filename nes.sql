@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: localhost
--- 產生時間： 2015 年 02 月 06 日 06:53
+-- 產生時間： 2015 年 02 月 08 日 14:10
 -- 伺服器版本: 5.6.22
 -- PHP 版本： 5.5.14
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `config` (
   `firstday` date NOT NULL,
   `backup1` varchar(30) NOT NULL,
   `backup2` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `config`
@@ -51,7 +51,8 @@ CREATE TABLE IF NOT EXISTS `event` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `group` varchar(50) NOT NULL,
-  `place` varchar(11) NOT NULL,
+  `place` varchar(30) NOT NULL,
+  `other` int(11) NOT NULL,
   `week` int(11) NOT NULL,
   `content` varchar(1000) NOT NULL,
   `teacher` varchar(30) NOT NULL,
@@ -59,12 +60,28 @@ CREATE TABLE IF NOT EXISTS `event` (
   `phone` varchar(30) NOT NULL,
   `leader2` varchar(30) NOT NULL,
   `phone2` varchar(30) NOT NULL,
-  `applicant` int(11) NOT NULL,
-  `submittime` datetime NOT NULL,
-  `priority` int(11) NOT NULL,
+  `applicant` varchar(30) NOT NULL,
+  `submittime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `pass` int(11) NOT NULL,
   `backup1` varchar(30) NOT NULL,
   `backup2` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `event`
+--
+
+INSERT INTO `event` (`id`, `name`, `group`, `place`, `other`, `week`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `applicant`, `submittime`, `pass`, `backup1`, `backup2`) VALUES
+(21, '廖子慶', '蘭潭攝影社', '學生活動中心二樓（學生會前）', 0, 4, 'asdfja;lsdkjf;asldf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:09:11', 0, '', ''),
+(22, '廖子慶', '蘭潭攝影社', '學生活動中心二樓（學生會前）', 0, 6, 'asdfja;lsdkjf;asldf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:09:28', 0, '', ''),
+(23, 'Sometimes', '蘭潭攝影社', '電物系草皮', 0, 4, 'asdfasdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:09:46', 0, '', ''),
+(24, 'ASDF', '蘭潭攝影社', '學生餐廳二樓', 0, 3, 'alsdkfja;lskdjf;aklsdjf;alksdjf;laskdjf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:14:17', 1, '', ''),
+(25, '廖子慶', '蘭潭攝影社', '學生活動中心一樓', 0, 2, 'asdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:28:24', 0, '', ''),
+(26, '廖子慶', '蘭潭攝影社', '學生餐廳二樓', 0, 0, 'asdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:29:30', 0, '', ''),
+(27, '廖子慶', '蘭潭攝影社', '學生餐廳二樓', 0, 1, 'asdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:29:36', 0, '', ''),
+(28, '廖子慶', '蘭潭攝影社', '學生餐廳二樓', 0, 0, 'asdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:29:41', 0, '', ''),
+(29, '鴨子的逆襲', '蘭潭攝影社', '學生活動中心一樓', 0, 0, 'asdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 15:45:12', 0, '', ''),
+(30, '廖子慶', '蘭潭攝影社', '學生活動中心一樓', 0, 0, 'a''sdfjq''wiejr''qiwejr''qiwejr''qiwejr''', 'KOSIR', '廖子慶', 'ASDF''''''', '蔡秉諺', '0900000000', 'duck', '2015-02-07 16:14:28', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -82,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `phone` varchar(30) NOT NULL,
   `backup1` varchar(30) NOT NULL,
   `backup2` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `member`
@@ -90,7 +107,8 @@ CREATE TABLE IF NOT EXISTS `member` (
 
 INSERT INTO `member` (`id`, `account`, `password`, `name`, `school`, `email`, `phone`, `backup1`, `backup2`) VALUES
 (6, 'admin', '66b65567cedbc743bda3417fb813b9ba', '管理員', '00000', '00@00', '00000', '', ''),
-(7, 'duck', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802', '', '');
+(7, 'duck', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802', '', ''),
+(8, 'nes', '09ddd30683b32f719dc86507fa4ecc10', '開發者', '000000', '00@00', '00000', '', '');
 
 -- --------------------------------------------------------
 
@@ -112,8 +130,8 @@ CREATE TABLE IF NOT EXISTS `place` (
 INSERT INTO `place` (`id`, `name`, `backup1`, `bakup2`) VALUES
 (1, '學生活動中心一樓', '', ''),
 (2, '學生活動中心一樓舞台', '', ''),
-(3, '學生活動中心二樓（學生會前）', '', ''),
-(4, '學生餐廳二樓（麵包店前）', '', ''),
+(3, '學生活動中心二樓', '', ''),
+(4, '學生餐廳二樓', '', ''),
 (5, '電物系草皮', '', ''),
 (6, '舊福利社廣場+走道', '', '');
 
@@ -153,17 +171,17 @@ ALTER TABLE `place`
 -- 使用資料表 AUTO_INCREMENT `config`
 --
 ALTER TABLE `config`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- 使用資料表 AUTO_INCREMENT `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- 使用資料表 AUTO_INCREMENT `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
