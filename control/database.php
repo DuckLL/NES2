@@ -6,7 +6,7 @@ $user='nes';
 $password='nesnes';
 try{
 	$db=new PDO($dsn,$user,$password);
-	$db->exec("set names urt8");
+	$db->exec("set names utf8");
 }
 catch(PDOException $e){
 	die('Database error'.$e->getMessage());

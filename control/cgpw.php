@@ -11,7 +11,7 @@ if($row[password]===md5(sha1(md5($_POST['oldpassword'])))){
 }
 else{
 	echo "<script type=\"text/javascript\">";
-	echo 'alert("修改成功！");';
+	echo 'alert("修改失敗！");';
 	echo "history.go(-1);";
 	echo "</script>";
 }
