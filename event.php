@@ -2,6 +2,7 @@
 require_once('control/html.php');
 require_once('control/define.php');
 head();
+echo '<script src="js/event.js"></script>';
 if(isset($_GET['id'])){
 	$id=mysql_escape_string($_GET['id']);
 	$sql="SELECT * FROM event WHERE id='{$id}'";
@@ -30,6 +31,10 @@ if(isset($_GET['id'])){
 			echo "尚未審核"."<br>";
 		else
 			echo "審核退回"."<br>";
+		if($row[applicant]==$_SESSION['account']){
+			echo '<button type="button" class="btn btn-warning" id="require">刪除</button>';
+			echo '<a class="btn btn-danger" id="delete" href="control/delete.php?id='.$row[id].'">確定刪除</a>';
+		}
 	}
 }
 tail();
