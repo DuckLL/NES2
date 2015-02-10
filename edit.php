@@ -1,6 +1,8 @@
 <?php
 require_once('control/html.php');
 require_once('control/database.php');
+if(!isset($_SESSION['account']))
+	header("Location: ../error.php");
 head();
 $sql="SELECT * FROM member WHERE account='{$_SESSION[account]}'";
 $rs = $db->query($sql);
