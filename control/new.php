@@ -1,5 +1,7 @@
 <?php
 require_once('database.php');
+if(!isset($_SESSION['account']))
+	header("Location: ../error.php");
 if(!isset($_POST['name'])||!isset($_POST['group'])||!isset($_POST['place'])||!isset($_POST['week'])||!isset($_POST['content'])||!isset($_POST['teacher'])||!isset($_POST['leader'])||!isset($_POST['phone'])||!isset($_POST['leader2'])||!isset($_POST['phone2'])){
 	header("Location: ../error.php");
 	exit;

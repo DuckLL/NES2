@@ -1,21 +1,23 @@
 <?php
 require_once('control/html.php');
 require_once('control/define.php');
+if(!isset($_SESSION['account']))
+	header("Location: ../error.php");
 head();
 ?>
 <script src="js/new.js"></script>
 <form method="post" action="control/new.php" class="form-inline">
-	<table class="table">
-		<tr>
-			<td colspan="2">
+	<table class="table table-bordered" style="border:1px solid black">
+		<tr style="border:1px solid black">
+			<td colspan="2" style="border:1px solid black">
 				<label class="col-sm-2 control-label">活動名稱</label>
 				<div class="col-sm-10">
 			      <input class="form-control" name="name" size="100" required>
     			</div>
 			</td>
 		</tr>
-		<tr>
-			<td colspan="2">
+		<tr style="border:1px solid black">
+			<td colspan="2" style="border:1px solid black">
 			    <label class="col-sm-2 control-label">活動時間</label>
 				<div class="col-sm-10">
 					<select class="form-control" name="week" required>
@@ -30,8 +32,8 @@ head();
 			    </div>
 			</td>
 		</tr>
-		<tr>
-			<td>
+		<tr style="border:1px solid black">
+			<td style="border:1px solid black">
 				<label>活動地點</label>
 				<select class="form-control" name="place" id="place"  required>
 					<?php
@@ -43,30 +45,27 @@ head();
 				</select>
 			</td>
 		</tr>
-		<tr>
-			<td rowspan="3">
+		<tr style="border:1px solid black">
+			<td rowspan="2" style="border:1px solid black">
 				<label>社團名稱</label>
 				<input class="form-control" name="group" required>
+				<br/>
+				<label>指導老師</label>
+				<input class="form-control" name="teacher" required>
 			</td>
-			<td>
+			<td style="border:1px solid black">
 				<label>活動負責人</label>
 				<input class="form-control" name="leader" required>
 				<label>電話</label>
 				<input class="form-control" name="phone" required>
 			</td>
 		</tr>
-		<tr>
-			<td>
+		<tr style="border:1px solid black">
+			<td style="border:1px solid black">
 				<label>活動負責人2</label>
 				<input class="form-control" name="leader2" required>
 				<label>電話</label>
 				<input class="form-control" name="phone2" required>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label>指導老師</label>
-				<input class="form-control" name="teacher" required>
 			</td>
 		</tr>
 	</table>
