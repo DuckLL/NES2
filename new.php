@@ -7,7 +7,7 @@ head();
 ?>
 <script src="js/new.js"></script>
 <form method="post" action="control/new.php" class="form-inline">
-	<table class="table table-bordered" style="border:1px solid black">
+	<table class="table" style="border:1px solid black">
 		<tr style="border:1px solid black">
 			<td colspan="2" style="border:1px solid black">
 				<label class="col-sm-2 control-label">活動名稱</label>
@@ -33,7 +33,7 @@ head();
 			</td>
 		</tr>
 		<tr style="border:1px solid black">
-			<td style="border:1px solid black">
+			<td colspan="2" style="border:1px solid black">
 				<label>活動地點</label>
 				<select class="form-control" name="place" id="place"  required>
 					<?php
@@ -46,12 +46,9 @@ head();
 			</td>
 		</tr>
 		<tr style="border:1px solid black">
-			<td rowspan="2" style="border:1px solid black">
+			<td style="border:1px solid black">
 				<label>社團名稱</label>
 				<input class="form-control" name="group" required>
-				<br/>
-				<label>指導老師</label>
-				<input class="form-control" name="teacher" required>
 			</td>
 			<td style="border:1px solid black">
 				<label>活動負責人</label>
@@ -61,6 +58,10 @@ head();
 			</td>
 		</tr>
 		<tr style="border:1px solid black">
+			<td style="border:1px solid black">
+				<label>指導老師</label>
+				<input class="form-control" name="teacher" required>
+			</td>
 			<td style="border:1px solid black">
 				<label>活動負責人2</label>
 				<input class="form-control" name="leader2" required>
