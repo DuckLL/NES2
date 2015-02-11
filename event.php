@@ -56,13 +56,13 @@ if(isset($_GET['id'])){
   			<div class="col-xs-6">'.$row[submittime].'</div>';
 		if($row[pass]==1)
 			echo '
-			<div class="col-xs-6"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>審核通過</div>';
+			<div class="col-xs-6"><span class="label label-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> 審核通過</span></div>';
 		elseif($row[pass]==0)
 			echo '
-			<div class="col-xs-6"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>尚未審核</div>';
+			<div class="col-xs-6"><span class="label label-default"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 尚未審核</span></div>';
 		else
 			echo '
-			<div class="col-xs-6"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>審核退回</div>';
+			<div class="col-xs-6"><span class="label label-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 審核退回</span></div>';
 		echo '
 		</div>
 		<p><a class="btn btn-primary btn-lg" onClick="history.go(-1)" role="button">返回</a>';
