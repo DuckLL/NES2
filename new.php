@@ -2,7 +2,7 @@
 require_once('control/html.php');
 require_once('control/define.php');
 if(!isset($_SESSION['account'])){
-	header("Location: ../error.php");
+	header("Location: error.php");
 	exit;
 }
 head();
