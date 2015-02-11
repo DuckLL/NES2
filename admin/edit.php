@@ -1,8 +1,8 @@
 <?php
 require_once('control/html.php');
-require_once('control/database.php');
+require_once('../control/database.php');
 if(!isset($_SESSION['account'])){
-	header("Location: error.php");
+	header("Location: ../error.php");
 	exit;
 }
 head();
@@ -10,8 +10,8 @@ $sql="SELECT * FROM member WHERE account='{$_SESSION[account]}'";
 $rs = $db->query($sql);
 $row = $rs->fetch();
 ?>
-<script src="js/edit.js"></script>
-<form method="post" action="control/cgpw.php">
+<script src="../js/edit.js"></script>
+<form method="post" action="../control/cgpw.php">
 	<label >舊密碼</label>
 	<input class="form-control" type="password" name="oldpassword" required>
 	<label>新密碼</label>
@@ -23,7 +23,7 @@ $row = $rs->fetch();
 </form>
 <br>
 <br>
-<form method="post" action="control/edit.php">
+<form method="post" action="../control/edit.php">
 	<label>真實姓名（ex:王大明）</label>
 	<input class="form-control" type="text" name="name" value="<?php echo $row[name];?>" required>
 	<label>學號（ex:1001234）</label>
