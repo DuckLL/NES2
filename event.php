@@ -53,16 +53,19 @@ if(isset($_GET['id'])){
 		echo '<div class="well" style="background-color:#ffe680;word-wrap:break-word">'.$row[content].'</div>';
 		echo '
 		<div class="row">
-  			<div class="col-xs-6">'.$row[submittime].'</div>';
+			<div class="col-md-2">申請時間:</div>
+  			<div class="col-md-3"><strong>'.$row[submittime].'</strong></div>
+  			<div class="col-md-2">申請人:</div>
+  			<div class="col-md-3"><strong>'.$row[applicant].'</strong></div>';
 		if($row[pass]==1)
 			echo '
-			<div class="col-xs-6"><span class="label label-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> 審核通過</span></div>';
+			<div class="col-md-2" style="float:right;"><span class="label label-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> 審核通過</span></div>';
 		elseif($row[pass]==0)
 			echo '
-			<div class="col-xs-6"><span class="label label-default"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 尚未審核</span></div>';
+			<div class="col-md-2"><span class="label label-default"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 尚未審核</span></div>';
 		else
 			echo '
-			<div class="col-xs-6"><span class="label label-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 審核退回</span></div>';
+			<div class="col-md-2"><span class="label label-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 審核退回</span></div>';
 		echo '
 		</div>
 		<p><a class="btn btn-primary btn-lg" href="show.php" role="button">返回</a>';
