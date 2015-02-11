@@ -36,7 +36,7 @@ echo'
 					<li><a href="date.php"> 時間管理</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="edit.php" class="glyphicon glyphicon-user"> 資料維護</a></li>
+					<li><a href="../edit.php" class="glyphicon glyphicon-user"> 資料維護</a></li>
 					<li><a href="../logout.php" class="glyphicon glyphicon-log-out"> 登出</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
