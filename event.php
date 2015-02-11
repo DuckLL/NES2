@@ -50,7 +50,7 @@ if(isset($_GET['id'])){
 			echo '
 			<div class="col-md-8"><em>"登入後才能查詢電話"</em></div>
 		</div>';
-		echo '<div class="well" style="background-color:#ffe680">'.$row[content].'</div>';
+		echo '<div class="well" style="background-color:#ffe680;word-wrap:break-word">'.$row[content].'</div>';
 		echo '
 		<div class="row">
   			<div class="col-xs-6">'.$row[submittime].'</div>';
@@ -65,7 +65,7 @@ if(isset($_GET['id'])){
 			<div class="col-xs-6"><span class="label label-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 審核退回</span></div>';
 		echo '
 		</div>
-		<p><a class="btn btn-primary btn-lg" onClick="history.go(-1)" role="button">返回</a>';
+		<p><a class="btn btn-primary btn-lg" href="show.php" role="button">返回</a>';
 		if($row[applicant]==$_SESSION['account']){
 			echo '<button class="btn btn-warning btn-lg" id="require" style="float:right">刪除</button>';
 			echo '<a class="btn btn-danger btn-lg" id="delete" style="float:right" href="control/delete.php?id='.$row[id].'">確定刪除</a>';

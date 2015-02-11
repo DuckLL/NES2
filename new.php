@@ -7,6 +7,7 @@ if(!isset($_SESSION['account'])){
 }
 head();
 ?>
+<script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
 <script src="js/new.js"></script>
 <form method="post" action="control/new.php" class="form-inline">
 	<table class="table" style="border:1px solid black">
@@ -35,7 +36,7 @@ head();
 			</td>
 		</tr>
 		<tr style="border:1px solid black">
-			<td colspan="2" style="border:1px solid black">
+			<td>
 				<label>活動地點</label>
 				<select class="form-control" name="place" id="place"  required>
 					<?php
@@ -45,6 +46,11 @@ head();
 					?>
 					<option value="other">其他</option>
 				</select>
+			</td>
+			<td id="other">
+				<label>其他地點</label>
+				<input class="form-control" name="other">
+				</div>
 			</td>
 		</tr>
 		<tr style="border:1px solid black">
@@ -73,7 +79,7 @@ head();
 		</tr>
 	</table>
 	<label>活動內容(500字內)</label>
-	<textarea class="form-control" name="content" required cols="100" rows="20"></textarea> 
+	<textarea class="form-control ckeditor" name="content" required cols="100" rows="20"></textarea> 
 	<br>
 	<input type="submit"  class="btn btn-primary"  id="submit" value="送出" style="float:right;">	
 </form>
