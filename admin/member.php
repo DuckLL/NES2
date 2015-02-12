@@ -49,15 +49,14 @@ echo '
 			';
 			if($row[account]!=='admin'){
 				echo '
-				<td><a class="btn btn-primary glyphicon glyphicon-trash" href="membercheck.php?id='.$row[id].'">刪除</a></td>
-			</tr>
-			';
+			<td><a class="btn btn-primary glyphicon glyphicon-trash" href="membercheck.php?id='.$row[id].'">刪除</a></td>
+		</tr>';
 		}
 	}
 	echo '
 </table>';
 echo '
-<nav align="center">
+<nav style="text-align:center">
 	<ul class="pagination">';
 		if ($page>0) {
 			$backward = "";
