@@ -29,13 +29,13 @@ function head(){
 				</div>
 				<div class="navbar-collapse collapse" style="height: 1px;">
 					<ul class="nav navbar-nav">
-						<li><a href="./"> 管理公告</a></li>
-						<li><a href="event.php"> 管理登記</a></li>
+						<li><a href="./"> 公告管理</a></li>
+						<li><a href="event.php"> 活動管理</a></li>
 						<li><a href="member.php"> 會員管理</a></li>
-						<li><a href="place_date.php"> 場地管理</a></li>
+						<li><a href="place_date.php"> 系統管理</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="edit.php" class="glyphicon glyphicon-user"> admin</a></li>
+						<li><a href="edit.php" class="glyphicon glyphicon-user"> 資料維護</a></li>
 						<li><a href="../logout.php" class="glyphicon glyphicon-log-out"> 登出</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->

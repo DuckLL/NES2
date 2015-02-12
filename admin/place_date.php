@@ -19,17 +19,15 @@ for($i=0;$i<$placecount;$i++){
 ?>
 </table>
 <form method="post" action="control/newplace.php">
-	<label>新增場地</label><br>
-	<input class="form-control" name="newplace" required>
-	<br>
-	<input type="submit"  class="btn btn-primary" value="新增">
+	<input class="col-md-8" name="newplace" value="(新場地)" required>
+	<input type="submit"  class="btn btn-primary btn-lg" value="新增">
 </form>
 <hr/>
 <div id="date">
 <label>學期第一週的星期一</label>
 <form method="post" action="control/date.php">
-	<input class="col-md-6" type="date" name="firstday" value="<?php echo $firstdaystr;?>"required>
-	<input class="btn btn-primary" type="submit" value="更新">
+	<input class="col-md-8" type="date" name="firstday" value="<?php echo $firstdaystr;?>"required>
+	<input class="btn btn-primary btn-lg" type="submit" value="更新">
 </form>
 </div>
 <?php

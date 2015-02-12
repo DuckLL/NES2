@@ -7,7 +7,7 @@ if(!isset($_SESSION['account'])){
 }
 head();
 ?>
-<script src="//cdn.ckeditor.com/4.4.7/basic/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
 <script src="js/new.js"></script>
 <form method="post" action="control/new.php" class="form-inline">
 	<table class="table" style="border:1px solid black">

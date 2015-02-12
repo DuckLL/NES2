@@ -35,10 +35,15 @@ head();
 			echo "</th>";
 		}
 		echo "<th>";
-			$sql="SELECT * FROM event WHERE week=".$i." and other=1";
+			$sql="SELECT * FROM event WHERE week=".$i." and other=1 and pass=1 ORDER BY `id` ASC";
 			$rs = $db->query($sql);
 			while($row = $rs->fetch()){
-				echo $row[name]."<br>";
+				echo '<a href="event.php?id='.$row[id].'" class="btn btn-success">'.$row[name]."</a><br>";
+			}
+			$sql="SELECT * FROM event WHERE week=".$i." and other=1 and pass=0 ORDER BY `id` ASC";
+			$rs = $db->query($sql);
+			while($row = $rs->fetch()){
+				echo '<a href="event.php?id='.$row[id].'"  class="btn btn-info">'.$row[name]."</a><br>";
 			}
 			echo "</th>";
 		echo "</tr>";
