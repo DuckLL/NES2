@@ -7,7 +7,7 @@ $sql="SELECT * FROM event WHERE id='{$id}'";
 $rs = $db->query($sql);
 if($row = $rs->fetch()){
 	if($row[applicant]==$_SESSION['account']){
-		$sql = "DELETE FROM event WHERE id='".$id."'";
+		$sql = "DELETE FROM event WHERE id='{$id}'";
 		$rs = $db->exec($sql);
 		header("Location: ../show.php");
 	}

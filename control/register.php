@@ -44,8 +44,8 @@ if($row[0]==1){
 }
 else{
 	$hashpassword=md5(sha1(md5($_POST['password'])));
-	$name=mysql_escape_string($_POST['name']);
-	$email=mysql_escape_string($_POST['email']);
+	$name=strip_tags(mysql_escape_string($_POST['name']));
+	$email=strip_tags(mysql_escape_string($_POST['email']));
 	$sql = "INSERT INTO member (account, password, name, school, email, phone) VALUES ('{$_POST['account']}', '{$hashpassword}', '{$name}', '{$_POST['school']}', '{$email}', '{$_POST['phone']}')";
 	$rs = $db->prepare($sql);
 	$rs->execute();
