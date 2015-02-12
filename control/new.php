@@ -22,9 +22,6 @@ $sql = "INSERT INTO `event` (`name`, `group`, `place`, `other`, `week`, `content
 //echo $sql;
 $rs = $db->prepare($sql);
 $rs->execute();
-$sql="SELECT * FROM event WHERE name='{$name}' and applicant='{$_SESSION['account']}' ORDER BY `id` DESC";
-$rs = $db->query($sql);
-$row = $rs->fetch();
-header("Location: ../event.php?id=".$row[id]);
+header("Location: ../show.php");
 exit;
 ?>

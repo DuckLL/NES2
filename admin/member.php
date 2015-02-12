@@ -27,7 +27,7 @@ while($row = $rs->fetch()){
 	echo $row[school];
 	echo $row[email];
 	echo $row[phone];
-	echo '<a href="control/memberdelete.php?id='.$row[id].'">刪除</a>';
+	echo '<a href="membercheck.php?id='.$row[id].'">刪除</a>';
 	echo "<br>";
 }
 if($page>0)

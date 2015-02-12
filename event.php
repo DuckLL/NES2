@@ -68,7 +68,7 @@ if(isset($_GET['id'])){
 			<div class="col-md-2"><span class="label label-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 審核退回</span></div>';
 		echo '
 		</div>
-		<p><a class="btn btn-primary btn-lg" href="show.php" role="button">返回</a>';
+		<p><a class="btn btn-primary btn-lg" onclick="history.back()" role="button">返回</a>';
 		if($row[applicant]==$_SESSION['account']){
 			echo '<button class="btn btn-warning btn-lg" id="require" style="float:right">刪除</button>';
 			echo '<a class="btn btn-danger btn-lg" id="delete" style="float:right" href="control/delete.php?id='.$row[id].'">確定刪除</a>';
