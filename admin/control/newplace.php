@@ -13,5 +13,5 @@ $rs->execute();
 $sql = "UPDATE event SET other=0 WHERE place='{$newplace}'";
 $rs = $db->prepare($sql);
 $rs->execute();
-header("Location: ../place.php");
+header("Location: ../place_date.php");
 ?>
