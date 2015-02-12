@@ -13,5 +13,5 @@ $rs->execute();
 $sql = "DELETE FROM place WHERE name='{$place[$id]}'";
 $rs = $db->prepare($sql);
 $rs->execute();
-header("Location: ../place.php");
+header("Location: ../place_date.php");
 ?>

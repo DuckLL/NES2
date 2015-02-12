@@ -8,5 +8,5 @@ $firstday=mysql_escape_string($_POST['firstday']);
 $sql = "UPDATE config SET firstday='{$firstday}' WHERE id=1";
 $rs = $db->prepare($sql);
 $rs->execute();
-header("Location: ../date.php");
+header("Location: ../place_date.php");
 ?>
