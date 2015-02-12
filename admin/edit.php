@@ -1,12 +1,12 @@
 <?php
 require_once('control/html.php');
 require_once('../control/database.php');
-if(!isset($_SESSION['account'])){
+if($_SESSION['account']!=='admin'){
 	header("Location: ../error.php");
 	exit;
 }
 head();
-$sql="SELECT * FROM member WHERE account='{$_SESSION[account]}'";
+$sql="SELECT * FROM member WHERE account='admin'";
 $rs = $db->query($sql);
 $row = $rs->fetch();
 ?>

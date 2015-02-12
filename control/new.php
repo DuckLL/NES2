@@ -8,16 +8,16 @@ if(!isset($_POST['name'])||!isset($_POST['group'])||!isset($_POST['place'])||!is
 }
 $place=$_POST['place']=='other'?$_POST['other']:$_POST['place'];
 $other=$_POST['place']=='other'?1:0;
-$name=mysql_escape_string($_POST['name']);
-$group=mysql_escape_string($_POST['group']);
-$place=mysql_escape_string($place);
-$week=mysql_escape_string($_POST['week']);
+$name=strip_tags(mysql_escape_string($_POST['name']));
+$group=strip_tags(mysql_escape_string($_POST['group']));
+$place=strip_tags(mysql_escape_string($place));
+$week=strip_tags(mysql_escape_string($_POST['week']));
 $content=mysql_escape_string($_POST['content']);
-$teacher=mysql_escape_string($_POST['teacher']);
-$leader=mysql_escape_string($_POST['leader']);
-$phone=mysql_escape_string($_POST['phone']);
-$leader2=mysql_escape_string($_POST['leader2']);
-$phone2=mysql_escape_string($_POST['phone2']);
+$teacher=strip_tags(mysql_escape_string($_POST['teacher']));
+$leader=strip_tags(mysql_escape_string($_POST['leader']));
+$phone=strip_tags(mysql_escape_string($_POST['phone']));
+$leader2=strip_tags(mysql_escape_string($_POST['leader2']));
+$phone2=strip_tags(mysql_escape_string($_POST['phone2']));
 $sql = "INSERT INTO `event` (`name`, `group`, `place`, `other`, `week`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `applicant`, `pass`) VALUES ('{$name}', '{$group}', '{$place}', $other, '{$week}', '{$content}', '{$teacher}', '{$leader}', '{$phone}', '{$leader2}', '{$phone2}', '{$_SESSION['account']}', 0)";
 //echo $sql;
 $rs = $db->prepare($sql);
