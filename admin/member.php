@@ -32,9 +32,9 @@ echo '
 		<tr>
 			<th>Account</tn>
 			<th>Name</th>
-			<th>ShoolNumber</th>
-			<th>email</th>
-			<th>cell</th>
+			<th>Shool_ID</th>
+			<th>Email</th>
+			<th>Phone</th>
 			<th></th>
 		</tr>
 	</thead>';
