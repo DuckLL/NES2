@@ -8,6 +8,7 @@ if($_SESSION['account']!=='admin'){
 head();
 ?>
 <script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
+<script src="control/post.js"></script>
 <form method="post" action="control/post.php" class="form-inline">
 	<label>公告</label>
 	<textarea class="form-control ckeditor" name="content" required rows="100%" cols="100%">
