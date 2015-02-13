@@ -11,7 +11,6 @@ echo'
 	<title>國立嘉義大學大型活動申請系統</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/starter-template.css" rel="stylesheet" type="text/css">
-	<link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<script src="js/jquery-2.1.1.min.js"></script>
