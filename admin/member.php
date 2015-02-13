@@ -30,11 +30,11 @@ echo '
 <table data-toggle="table" data-card-view="true" class="small">
 	<thead>
 		<tr>
-			<th>Account</tn>
-			<th>Name</th>
-			<th>Shool_ID</th>
+			<th>帳號</tn>
+			<th>姓名</th>
+			<th>學號</th>
 			<th>Email</th>
-			<th>Phone</th>
+			<th>電話</th>
 			<th></th>
 		</tr>
 	</thead>';
