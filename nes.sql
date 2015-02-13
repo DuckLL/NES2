@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: localhost
--- 產生時間： 2015 年 02 月 11 日 08:34
+-- 產生時間： 2015 年 02 月 13 日 03:38
 -- 伺服器版本: 5.6.22
 -- PHP 版本： 5.5.14
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 --
 
 INSERT INTO `config` (`id`, `about`, `firstday`) VALUES
-(1, '<ul>\r\n	<li><span style="font-size:36px"><span style="font-family:courier new,courier,monospace">大型活動可以申請的日期是活動前12個禮拜</span></span></li>\r\n	<li><span style="font-size:36px"><span style="font-family:courier new,courier,monospace">排列順序是依據申請時間排列</span></span></li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n', '2015-02-23');
+(1, '<ul>\r\n	<li><span style="font-family:comic sans ms,cursive"><strong><span style="font-size:48px">大型活動可以申請的日期是活動前<span style="color:#FF0000">12個禮拜</span></span></strong></span></li>\r\n	<li>\r\n	<h2><span style="font-family:comic sans ms,cursive"><strong><span style="font-size:48px">排列順序是<span style="background-color:#FFFFE0">依據申請時間排列 </span>&nbsp;<img alt="" src="http://upload.wikimedia.org/wikipedia/zh/6/67/NCYU.svg" style="height:300px; width:300px" /></span></strong></span></h2>\r\n	</li>\r\n</ul>\r\n', '2015-02-23');
 
 -- --------------------------------------------------------
 
@@ -61,21 +61,43 @@ CREATE TABLE IF NOT EXISTS `event` (
   `applicant` varchar(30) NOT NULL,
   `submittime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `pass` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `event`
 --
 
 INSERT INTO `event` (`id`, `name`, `group`, `place`, `other`, `week`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `applicant`, `submittime`, `pass`) VALUES
-(21, '廖子慶', '蘭潭攝影社', '學生活動中心二樓（學生會前）', 0, 4, 'asdfja;lsdkjf;asldf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 07:09:11', 0),
-(22, '廖子慶', '蘭潭攝影社', '學生活動中心二樓（學生會前）', 0, 6, 'asdfja;lsdkjf;asldf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 07:09:28', 0),
-(23, 'Sometimes', '蘭潭攝影社', '電物系草皮', 0, 4, 'asdfasdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 07:09:46', 0),
-(24, 'ASDF', '蘭潭攝影社', '學生餐廳二樓', 0, 3, 'alsdkfja;lskdjf;aklsdjf;alksdjf;laskdjf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 07:14:17', 1),
-(25, '廖子慶', '蘭潭攝影社', '學生活動中心一樓', 0, 2, 'asdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 07:28:24', 0),
-(27, '廖子慶', '蘭潭攝影社', '學生餐廳二樓', 0, 1, 'asdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 07:29:36', 0),
-(28, '廖子慶', '蘭潭攝影社', '學生餐廳二樓', 0, 0, 'asdfasdf', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-07 07:29:41', 0),
-(31, 'hahaha', '蘭潭攝影社', '學生活動中心一樓', 0, 0, '調查復興航空空難原因，士林地檢署昨天就訊事發當天值班的2位塔台人員，釐清飛機飛離跑道時的狀況，據了解，塔台人員供稱，飛機飛離跑道時一切正常，將飛機通訊轉接給台北近場台後，但近場台一直未能和飛機通訊，因此聯繫塔台，在這中間有雜訊，塔台未聽到駕駛員喊「Mayday」（求救），是事後調錄音才發現。\r\n針對大陸民航專家將參與大陸國台辦發言人馬曉光9日透露，8日晚間已有三名大陸民航專家抵達台灣，這也是兩岸人員首度共同參與空難事件調查。至於身分與職稱他不願透露。\r\n偵辦復興空難有無業務過失責任的士林地檢署，檢察官昨專程到民航局飛航服務總台，就訊事發當天值班的2位值班人員。\r\n根據了解，1名塔台人員因墜機事件衝擊太大，心情無法平復，單位主管發現此狀況，趕緊請心理諮商師輔導該員，並讓他休假幾天才回到崗位上，情況已好轉。\r\n2名塔台人員向檢方表示，失事的班機要飛離跑道時，飛行的高度和方向都正常，因此起飛後，程序上是要由台北近場台接手，塔台也隨即請飛機駕駛連繫近場台。\r\n但近場台人員一直未和飛機駕駛連繫上，又在衛星圖上發現該班機飛行軌跡不對，因此趕緊連繫塔台，塔台於是呼叫駕駛但始終都未獲回應，僅有雜訊，整個過程僅約3分多鐘，後來便接到飛機墜機消息，調閱通訊錄音檔，才聽到駕駛喊「Mayday」的求救聲。\r\n檢方認為，塔台人員所說和飛安會前幾天公布的黑盒子判讀資料大致吻合，檢方也表示，因飛機起飛約3分多鐘便失事，當時即使塔台聽到飛機駕駛喊Mayday的求救聲，應也無法挽救悲劇發生。\r\n另外，檢方昨也傳訊復興航空的機務人員，確認航務訊息及飛機維修紀錄和結構，近期將陸續訊問傷勢漸趨穩定的生還者，還原事發狀況，包括機組員中唯一倖存的空姐黃敬雅。', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-10 09:40:50', 0);
+(49, '0', '蘭潭攝影社', '學生活動中心一樓', 0, 0, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(50, '1', '蘭潭攝影社', '學生活動中心一樓舞台', 0, 1, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 1),
+(51, '2', '蘭潭攝影社', '學生活動中心二樓', 0, 2, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(52, '3', '蘭潭攝影社', '學生餐廳二樓', 0, 3, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(53, '4', '蘭潭攝影社', '電物系草皮', 0, 4, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(54, '5', '蘭潭攝影社', '舊福利社廣場+走道', 0, 5, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', -1),
+(55, '6', '蘭潭攝影社', '學生活動中心一樓', 0, 6, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(56, '7', '蘭潭攝影社', '學生活動中心一樓舞台', 0, 7, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(57, '8', '蘭潭攝影社', '學生活動中心二樓', 0, 8, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(58, '9', '蘭潭攝影社', '學生餐廳二樓', 0, 9, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(59, '10', '蘭潭攝影社', '電物系草皮', 0, 10, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(60, '11', '蘭潭攝影社', '舊福利社廣場+走道', 0, 11, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(61, '12', '蘭潭攝影社', '學生活動中心一樓', 0, 12, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(62, '13', '蘭潭攝影社', '學生活動中心一樓舞台', 0, 13, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(63, '14', '蘭潭攝影社', '學生活動中心二樓', 0, 14, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(64, '15', '蘭潭攝影社', '學生餐廳二樓', 0, 15, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(65, '16', '蘭潭攝影社', '電物系草皮', 0, 16, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(66, '17', '蘭潭攝影社', '舊福利社廣場+走道', 0, 17, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', -1),
+(67, '18', '蘭潭攝影社', '學生活動中心一樓', 0, 18, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(68, '19', '蘭潭攝影社', '學生活動中心一樓舞台', 0, 19, '<p>test</p>\r\n\r\n<p style="text-align: right;"><span style="font-size:20px"><span style="font-family:comic sans ms,cursive">test</span></span></p>\r\n\r\n<p><span class="marker">test</span></p>\r\n\r\n<h1 style="border: 1px solid rgb(204, 204, 204); padding: 5px 10px; background: rgb(238, 238, 238);"><span class="marker">test</span></h1>\r\n\r\n<p><span style="color:#00FF00"><span style="background-color:#A52A2A">test</span></span></p>\r\n', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:02:59', 0),
+(69, 'test', '蘭潭攝影社', '學生活動中心一樓', 0, 0, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', 1),
+(70, 'test', '蘭潭攝影社', '學生活動中心二樓', 0, 4, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', -1),
+(71, 'test', '蘭潭攝影社', '電物系草皮', 0, 16, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', 0),
+(72, 'test', '蘭潭攝影社', '學生活動中心一樓', 0, 16, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', 0),
+(73, 'test', '蘭潭攝影社', '學生活動中心二樓', 0, 4, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', -1),
+(74, 'test', '蘭潭攝影社', '電物系草皮', 0, 0, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', 1),
+(75, 'test', '蘭潭攝影社', '學生活動中心一樓', 0, 4, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', 0),
+(76, 'test', '蘭潭攝影社', '學生活動中心二樓', 0, 16, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', 0),
+(77, 'test', '蘭潭攝影社', '電物系草皮', 0, 16, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', -1),
+(78, 'test', '蘭潭攝影社', '學生活動中心一樓', 0, 4, '', 'KOSIR', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'duck', '2015-02-13 03:04:55', 1);
 
 -- --------------------------------------------------------
 
@@ -91,72 +113,115 @@ CREATE TABLE IF NOT EXISTS `member` (
   `school` varchar(10) NOT NULL,
   `email` varchar(30) NOT NULL,
   `phone` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `member`
 --
 
 INSERT INTO `member` (`id`, `account`, `password`, `name`, `school`, `email`, `phone`) VALUES
-(6, 'admin', '66b65567cedbc743bda3417fb813b9ba', '管理員', '1357924680', 'admin@mail.ncyu.edu.tw', '0000000000'),
-(7, 'duck', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(8, 'nes', '3dcb71a0299a249f498846fe3f19f9fb', '開發者', '000000', '00@00', '00000'),
-(9, 'duck1', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(10, 'duck2', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(11, 'duck3', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(12, 'duck4', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(13, 'duck5', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(14, 'duck6', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(15, 'duck7', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(16, 'duck8', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
-(21, 'test2', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(22, 'test3', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(23, 'test4', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(24, 'test5', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(25, 'test6', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(26, 'test7', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(27, 'test8', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(28, 'test9', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(29, 'test10', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(30, 'test11', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(31, 'test12', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(32, 'test13', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(33, 'test14', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(34, 'test15', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(35, 'test16', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(36, 'test17', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(37, 'test18', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(38, 'test19', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(39, 'test20', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(40, 'test21', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(41, 'test22', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(42, 'test23', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(43, 'test24', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(44, 'test25', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(45, 'test26', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(46, 'test27', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(47, 'test28', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(48, 'test29', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(49, 'test30', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(50, 'test31', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(51, 'test32', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(52, 'test33', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(53, 'test34', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(54, 'test35', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(55, 'test36', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(56, 'test37', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(57, 'test38', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(58, 'test39', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(59, 'test40', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(60, 'test41', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(61, 'test42', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(62, 'test43', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(63, 'test44', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(64, 'test45', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(65, 'test46', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(66, 'test47', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(67, 'test48', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000'),
-(68, 'test49', '7f16dd95045d57411a911701d2945348', '測試人員', '00000', '00@00', '0000000000');
+(1, 'admin', '66b65567cedbc743bda3417fb813b9ba', '管理員', '1357924680', 'admin@mail.ncyu.edu.tw', '0000000000'),
+(2, 'duck', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802'),
+(73, 'test0', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(74, 'test1', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(75, 'test2', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(76, 'test3', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(77, 'test4', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(78, 'test5', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(79, 'test6', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(80, 'test7', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(81, 'test8', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(82, 'test9', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(83, 'test10', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(84, 'test11', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(85, 'test12', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(86, 'test13', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(87, 'test14', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(88, 'test15', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(89, 'test16', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(90, 'test17', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(91, 'test18', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(92, 'test19', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(93, 'test20', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(94, 'test21', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(95, 'test22', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(96, 'test23', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(97, 'test24', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(98, 'test25', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(99, 'test26', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(100, 'test27', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(101, 'test28', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(102, 'test29', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(103, 'test30', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(104, 'test31', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(105, 'test32', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(106, 'test33', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(107, 'test34', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(108, 'test35', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(109, 'test36', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(110, 'test37', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(111, 'test38', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(112, 'test39', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(113, 'test40', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(114, 'test41', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(115, 'test42', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(116, 'test43', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(117, 'test44', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(118, 'test45', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(119, 'test46', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(120, 'test47', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(121, 'test48', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(122, 'test49', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(123, 'test50', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(124, 'test51', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(125, 'test52', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(126, 'test53', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(127, 'test54', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(128, 'test55', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(129, 'test56', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(130, 'test57', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(131, 'test58', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(132, 'test59', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(133, 'test60', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(134, 'test61', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(135, 'test62', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(136, 'test63', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(137, 'test64', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(138, 'test65', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(139, 'test66', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(140, 'test67', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(141, 'test68', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(142, 'test69', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(143, 'test70', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(144, 'test71', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(145, 'test72', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(146, 'test73', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(147, 'test74', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(148, 'test75', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(149, 'test76', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(150, 'test77', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(151, 'test78', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(152, 'test79', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(153, 'test80', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(154, 'test81', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(155, 'test82', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(156, 'test83', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(157, 'test84', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(158, 'test85', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(159, 'test86', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(160, 'test87', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(161, 'test88', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(162, 'test89', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(163, 'test90', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(164, 'test91', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(165, 'test92', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(166, 'test93', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(167, 'test94', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(168, 'test95', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(169, 'test96', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(170, 'test97', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(171, 'test98', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000'),
+(172, 'test99', '54640093f5e4052d9aeda7f90b0b6324', 'test', '00000', '00@00', '0000000000');
 
 -- --------------------------------------------------------
 
@@ -167,7 +232,7 @@ INSERT INTO `member` (`id`, `account`, `password`, `name`, `school`, `email`, `p
 CREATE TABLE IF NOT EXISTS `place` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `place`
@@ -222,17 +287,17 @@ ALTER TABLE `config`
 -- 使用資料表 AUTO_INCREMENT `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=79;
 --
 -- 使用資料表 AUTO_INCREMENT `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=173;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
