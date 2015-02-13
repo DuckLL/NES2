@@ -4,7 +4,7 @@ if(!isset($_POST['account'])||!isset($_POST['password'])||!isset($_POST['passwor
 	header("Location: ../error.php");
 	exit;
 }
-if(!preg_match("/^[a-zA-Z0-9]*$/",$_POST['account'])){
+if(!preg_match("/^[a-zA-Z]\w*$/",$_POST['account'])){
 	echo "<script type=\"text/javascript\">";
 	echo 'alert("帳號只能使用英文或數字");';
 	echo "history.go(-1);";
