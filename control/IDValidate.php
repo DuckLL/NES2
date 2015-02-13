@@ -1,6 +1,6 @@
 <?php
 require_once('database.php');
-if(!ereg("^[a-zA-Z0-9]+$",$_POST['account'])){
+if(!preg_match("/^[a-zA-Z0-9]*$/",$_POST['account'])){
 	$ret="您的ID格式不正確 只能使用英文與數字(標點符號空格也不行喔)";
 }
 elseif(strlen($_POST['account'])>30){
