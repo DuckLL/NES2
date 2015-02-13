@@ -32,6 +32,11 @@ head();
 			while($row = $rs->fetch()){
 				echo '<a href="event.php?id='.$row[id].'"  class="btn btn-info">'.$row[name]."</a><br>";
 			}
+			$sql="SELECT * FROM event WHERE week=".$i." and place='".$place[$j]."' and pass=-1 ORDER BY `id` ASC";
+			$rs = $db->query($sql);
+			while($row = $rs->fetch()){
+				echo '<a href="event.php?id='.$row[id].'" class="btn btn-danger">'.$row[name]."</a><br>";
+			}
 			echo "</th>";
 		}
 		echo "<th>";
@@ -44,6 +49,11 @@ head();
 			$rs = $db->query($sql);
 			while($row = $rs->fetch()){
 				echo '<a href="event.php?id='.$row[id].'"  class="btn btn-info">'.$row[name]."</a><br>";
+			}
+			$sql="SELECT * FROM event WHERE week=".$i." and other=1 and pass=-1 ORDER BY `id` ASC";
+			$rs = $db->query($sql);
+			while($row = $rs->fetch()){
+				echo '<a href="event.php?id='.$row[id].'"  class="btn btn-danger">'.$row[name]."</a><br>";
 			}
 			echo "</th>";
 		echo "</tr>";
