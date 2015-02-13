@@ -3,7 +3,7 @@ require_once('database.php');
 if(!isset($_POST['account'])||!isset($_POST['school'])||!isset($_POST['email'])||!isset($_POST['phone'])){
 	$ans="資料不完整";
 }
-elseif(!ereg("^[a-zA-Z0-9]+$",$_POST['account'])){
+elseif(!preg_match("/^[a-zA-Z0-9]*$/",$_POST['account'])){
 	$ans="資料錯誤";
 }
 else{
