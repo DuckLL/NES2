@@ -4,9 +4,9 @@ if(!isset($_POST['account'])||!isset($_POST['password'])){
 	header("Location: ../error.php");
 	exit;
 }
-if(!preg_match("/^[a-zA-Z0-9]*$/",$_POST['account'])){
+if(!preg_match("/^[a-zA-Z]\w*$/",$_POST['account'])){
 	echo "<script type=\"text/javascript\">";
-	echo 'alert("帳號只能使用英文或數字");';
+	echo 'alert("您的ID格式不正確 第一個字不為數字，只接受大小寫字母、數字及底線");';
 	echo "history.go(-1);";
 	echo "</script>";
 	exit;
