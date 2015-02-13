@@ -1,6 +1,6 @@
 <?php
 require_once('control/html.php');
-require_once('../control/database.php');
+require_once('../control/define.php');
 if($_SESSION['account']!=='admin'){
 	header("Location: ../error.php");
 	exit;
@@ -18,15 +18,15 @@ echo '<input type="checkbox" id="before">已經結束的活動';
 echo '<input type="checkbox" id="pass">已通過';
 echo '<input type="checkbox" id="unpass">未通過';
 echo '
-<table data-toggle="table" data-card-view="true">
+<table data-toggle="table" data-card-view="true" class="small">
 	<thead>
 		<tr>
-			<th>Activity</tn>
-			<th>club</th>
-			<th>date</th>
-			<th>place</th>
-			<th>info</th>
-			<th>status</th>
+			<th>活動名稱</tn>
+			<th>申請單位</th>
+			<th>活動時間</th>
+			<th>活動地點</th>
+			<th>詳細資訊</th>
+			<th>審核狀況</th>
 		</tr>
 	</thead>';
 while($row = $rs->fetch()){
@@ -37,7 +37,7 @@ while($row = $rs->fetch()){
 	<tr class="'.$done.' '.$pass.'">
 		<td>'.$row[name].'</td>
 		<td>'.$row[group].'</td>
-		<td>'.$row[week].'</td>
+		<td>第'.$row[week].'週'.$allweek[$row[week]].'</td>
 		<td>'.$row[place].'</td>
 		<td>'.$link.'</td>';
 	if($row[pass]==1){
