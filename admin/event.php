@@ -37,7 +37,7 @@ while($row = $rs->fetch()){
 	<tr class="'.$done.' '.$pass.'">
 		<td>'.$row[name].'</td>
 		<td>'.$row[group].'</td>
-		<td>第'.$row[week].'週'.$allweek[$row[week]].'</td>
+		<td>第'.($row[week]+1).'週'.$allweek[$row[week]].'</td>
 		<td>'.$row[place].'</td>
 		<td>'.$link.'</td>';
 	if($row[pass]==1){
