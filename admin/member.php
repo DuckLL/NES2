@@ -14,7 +14,7 @@ $sql="SELECT count(*) FROM member";
 $rs = $db->query($sql);
 $row = $rs->fetch();
 $total=$row[0];
-$shownum=10;
+$shownum=5;
 $limit=ceil($total/$shownum);
 if(!isset($_GET['page']))
 	$page=0;
@@ -27,7 +27,7 @@ $sql="SELECT * FROM member LIMIT ".$offset.",".$shownum;
 $rs = $db->query($sql);
 echo "總人數：".$total."<br>";
 echo '
-<table data-toggle="table" data-card-view="true">
+<table data-toggle="table" data-card-view="true" class="small">
 	<thead>
 		<tr>
 			<th>Account</tn>

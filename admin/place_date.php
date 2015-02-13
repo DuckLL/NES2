@@ -24,7 +24,7 @@ for($i=0;$i<$placecount;$i++){
 </form>
 <hr/>
 <div id="date">
-<label>學期第一週的星期一</label>
+<label>設定學期第一週的星期一</label>
 <form method="post" action="control/date.php">
 	<input class="col-md-8" type="date" name="firstday" value="<?php echo $firstdaystr;?>"required>
 	<input class="btn btn-primary btn-lg" type="submit" value="更新">
