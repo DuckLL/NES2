@@ -18,6 +18,13 @@ if(strlen($_POST['account'])>30){
 	echo "</script>";
 	exit;
 }
+if(!preg_match("/^([\x7f-\xff]+)$/",$_POST['name'])){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("姓名只能使用中文");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
 if(!preg_match("/^[0-9]*$/",$_POST['school'])){
 	echo "<script type=\"text/javascript\">";
 	echo 'alert("學號只能使用數字");';
@@ -44,13 +51,12 @@ if($row[0]==1){
 }
 else{
 	$hashpassword=md5(sha1(md5($_POST['password'])));
-	$name=strip_tags(mysql_escape_string($_POST['name']));
 	$email=strip_tags(mysql_escape_string($_POST['email']));
 	$sql = "INSERT INTO member (account, password, name, school, email, phone) VALUES ('{$_POST['account']}', '{$hashpassword}', '{$name}', '{$_POST['school']}', '{$email}', '{$_POST['phone']}')";
 	$rs = $db->prepare($sql);
 	$rs->execute();
 	echo "<script type=\"text/javascript\">";
-	echo 'alert("success!");';
+	echo 'alert("註冊成功!");';
 	echo "history.go(-2);";
 	echo "</script>";
 	exit;

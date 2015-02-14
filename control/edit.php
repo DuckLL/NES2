@@ -6,6 +6,13 @@ if(!isset($_POST['name'])||!isset($_POST['school'])||!isset($_POST['email'])||!i
 	header("Location: ../error.php");
 	exit;
 }
+if(!preg_match("/^([\x7f-\xff]+)$/",$_POST['name'])){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("姓名只能使用中文");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
 if(!preg_match("/^[0-9]*$/",$_POST['school'])){
 	echo "<script type=\"text/javascript\">";
 	echo 'alert("學號只能使用數字");';
@@ -20,7 +27,6 @@ if(!preg_match("/^[0-9]*$/",$_POST['phone'])){
 	echo "</script>";
 	exit;
 }
-$name=strip_tags(mysql_escape_string($_POST['name']));
 $email=strip_tags(mysql_escape_string($_POST['email']));
 $sql = "UPDATE member SET name = '{$name}', school = '{$_POST['school']}', email='{$email}', phone = '{$_POST['phone']}' WHERE account = '{$_SESSION['account']}'";
 $rs = $db->prepare($sql);

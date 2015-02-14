@@ -9,6 +9,6 @@ try{
 	$db->exec("set names utf8");
 }
 catch(PDOException $e){
-	die('Database error'.$e->getMessage());
+	die('Database error: '.$e->getMessage());
 }
 ?>
