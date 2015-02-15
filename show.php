@@ -16,49 +16,51 @@ head();
 		</tr>
 	</thead>
 	<tbody>
-	<?php
-	for($i=0;$i<20;$i++){
-		echo "<tr>";
-		echo "<th>".($i+1)."</th>";
-		for($j=0;$j<$placecount;$j++){
+		<?php
+		for($i=0;$i<20;$i++){
+			echo "<tr>";
+			echo "<th>".($i+1)."</th>";
+			for($j=0;$j<$placecount;$j++){
+				echo "<th>";
+				$sql="SELECT * FROM event WHERE week=".$i." and place='".$place[$j]."' ORDER BY `id` ASC";
+				$rs = $db->query($sql);
+				while($row = $rs->fetch()){
+					if($row[pass]==-1){
+						echo '<a href="event.php?id='.$row[id].'" class="btn btn-danger">'.$row[name]."</a><br>";
+					}
+					if($row[pass]==0){
+						echo '<a href="event.php?id='.$row[id].'" class="btn btn-info">'.$row[name]."</a><br>";
+					}
+					if($row[pass]==1){
+						echo '<a href="event.php?id='.$row[id].'" class="btn btn-success">'.$row[name]."</a><br>";
+					}
+					if($row[pass]==2){
+						echo '<a href="event.php?id='.$row[id].'" class="btn btn-warning">'.$row[name]."</a><br>";
+					}
+				}
+				echo "</th>";
+			}
 			echo "<th>";
-			$sql="SELECT * FROM event WHERE week=".$i." and place='".$place[$j]."' and pass=1 ORDER BY `id` ASC";
+			$sql="SELECT * FROM event WHERE week=".$i." and other=1 ORDER BY `id` ASC";
 			$rs = $db->query($sql);
 			while($row = $rs->fetch()){
-				echo '<a href="event.php?id='.$row[id].'" class="btn btn-success">'.$row[name]."</a><br>";
-			}
-			$sql="SELECT * FROM event WHERE week=".$i." and place='".$place[$j]."' and pass=0 ORDER BY `id` ASC";
-			$rs = $db->query($sql);
-			while($row = $rs->fetch()){
-				echo '<a href="event.php?id='.$row[id].'"  class="btn btn-info">'.$row[name]."</a><br>";
-			}
-			$sql="SELECT * FROM event WHERE week=".$i." and place='".$place[$j]."' and pass=-1 ORDER BY `id` ASC";
-			$rs = $db->query($sql);
-			while($row = $rs->fetch()){
-				echo '<a href="event.php?id='.$row[id].'" class="btn btn-danger">'.$row[name]."</a><br>";
+				if($row[pass]==-1){
+						echo '<a href="event.php?id='.$row[id].'" class="btn btn-danger">'.$row[name]."</a><br>";
+					}
+					if($row[pass]==0){
+						echo '<a href="event.php?id='.$row[id].'" class="btn btn-info">'.$row[name]."</a><br>";
+					}
+					if($row[pass]==1){
+						echo '<a href="event.php?id='.$row[id].'" class="btn btn-success">'.$row[name]."</a><br>";
+					}
+					if($row[pass]==2){
+						echo '<a href="event.php?id='.$row[id].'" class="btn btn-warning">'.$row[name]."</a><br>";
+					}
 			}
 			echo "</th>";
+			echo "</tr>";
 		}
-		echo "<th>";
-			$sql="SELECT * FROM event WHERE week=".$i." and other=1 and pass=1 ORDER BY `id` ASC";
-			$rs = $db->query($sql);
-			while($row = $rs->fetch()){
-				echo '<a href="event.php?id='.$row[id].'" class="btn btn-success">'.$row[name]."</a><br>";
-			}
-			$sql="SELECT * FROM event WHERE week=".$i." and other=1 and pass=0 ORDER BY `id` ASC";
-			$rs = $db->query($sql);
-			while($row = $rs->fetch()){
-				echo '<a href="event.php?id='.$row[id].'"  class="btn btn-info">'.$row[name]."</a><br>";
-			}
-			$sql="SELECT * FROM event WHERE week=".$i." and other=1 and pass=-1 ORDER BY `id` ASC";
-			$rs = $db->query($sql);
-			while($row = $rs->fetch()){
-				echo '<a href="event.php?id='.$row[id].'"  class="btn btn-danger">'.$row[name]."</a><br>";
-			}
-			echo "</th>";
-		echo "</tr>";
-	}
-	?>
+		?>
 	</tbody>
 </table>
 <?php

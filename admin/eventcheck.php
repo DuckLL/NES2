@@ -62,13 +62,18 @@ if($row = $rs->fetch()){
 		elseif($row[pass]==0)
 			echo '
 		<div class="col-md-2"><span class="label label-default"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 尚未審核</span></div>';
+		elseif($row[pass]==2)
+			echo '
+		<div class="col-md-2"><span class="label label-warning"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 重新審核</span></div>';
 		else
 			echo '
 		<div class="col-md-2"><span class="label label-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 審核退回</span></div>';
 		echo '
 	</div>
-	<p><a class="btn btn-danger btn-lg" id="delete" href="control/eventdelete.php?id='.$row[id].'">確定刪除</a>
-		<a class="btn btn-primary btn-lg" onclick="history.back()" role="button">返回</a>
+	<p>';
+	if($_GET['delete']==1)
+	echo '<a class="btn btn-danger btn-lg" id="delete" href="control/eventdelete.php?id='.$row[id].'">確定刪除</a>';
+	echo '<a class="btn btn-primary btn-lg" onclick="history.back()" role="button">返回</a>
 	</p></div>';
 
 }
