@@ -32,7 +32,7 @@ echo '
 while($row = $rs->fetch()){
 	$done=$row[week]<$nowweek?'done':'undone';
 	$pass=$row[pass]==1?'pass':'unpass';
-	$link='<a href="../event.php?id='.$row[id].'">詳細內容</a>';
+	$link='<a href="eventcheck.php?id='.$row[id].'">詳細內容</a>';
 	echo '
 	<tr class="'.$done.' '.$pass.'">
 		<td>'.$row[name].'</td>
@@ -50,15 +50,20 @@ while($row = $rs->fetch()){
 		<td>
 			<span class="label label-default">尚未審核</span>';
 	}
+	elseif($row[pass]==2){
+		echo '
+		<td>
+			<span class="label label-warning">重新審核</span>';
+	}
 	else{
 		echo '
 		<td>
 			<span class="label label-danger">審核退回</span>';
 	}
 	echo '
-			<a style="float:right" class="btn btn-warning glyphicon glyphicon-trash" href="eventcheck.php?id='.$row[id].'"> 刪除</a>
+			<a style="float:right" class="btn btn-default glyphicon glyphicon-trash" href="eventcheck.php?id='.$row[id].'&delete=1"> 刪除</a>
 			<a style="float:right" class="btn btn-danger glyphicon glyphicon-ban-circle" href="control/eventpass.php?id='.$row[id].'&pass=-1"> 退件</a>
-			<a style="float:right" class="btn btn-default glyphicon glyphicon-minus" href="control/eventpass.php?id='.$row[id].'&pass=0"> 暫緩</a>
+			<a style="float:right" class="btn btn-warning glyphicon glyphicon-minus" href="control/eventpass.php?id='.$row[id].'&pass=2"> 重審</a>
 			<a style="float:right" class="btn btn-success glyphicon glyphicon-ok-circle" href="control/eventpass.php?id='.$row[id].'&pass=1"> 通過</a>
 		</td>
 	</tr>';

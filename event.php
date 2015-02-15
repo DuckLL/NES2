@@ -63,6 +63,9 @@ if(isset($_GET['id'])){
 		elseif($row[pass]==0)
 			echo '
 			<div class="col-md-2"><span class="label label-default"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 尚未審核</span></div>';
+		elseif($row[pass]==2)
+			echo '
+			<div class="col-md-2"><span class="label label-warning"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> 重新審核中</span></div>';
 		else
 			echo '
 			<div class="col-md-2"><span class="label label-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 審核退回</span></div>';
