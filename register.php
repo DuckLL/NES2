@@ -12,13 +12,13 @@ head();
 	<input class="form-control" type="password" name="password" id="password" required>
 	<label>密碼確認</label>
 	<input class="form-control" type="password" name="password2" id="password2" required>
-	<label>真實姓名（ex:王大明）</label>
+	<label>姓名（中文限定 ex:王大明）</label>
 	<input class="form-control" type="text" name="name" required>
-	<label>學號（ex:1001234）</label>
+	<label>學號（數字限定 ex:1001234）</label>
 	<input class="form-control" type="text" name="school" required>	
-	<label>校外電子信箱</label>
+	<label>校外電子信箱（ex:xxx@gmail.com）</label>
 	<input class="form-control" type="email" name="email" required>
-	<label>手機（ex:0912345678）</label>
+	<label>手機（數字限定 ex:0912345678）</label>
 	<input class="form-control" type="text" name="phone" required>
 	<br>
 	<input type="submit"  class="btn btn-primary"  id="submit" value="送出" style="float:right;">	
