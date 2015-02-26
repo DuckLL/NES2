@@ -23,15 +23,9 @@ head();
 			<td colspan="2" style="border:1px solid black">
 			    <label class="col-sm-2 control-label">活動時間</label>
 				<div class="col-sm-10">
-					<select class="form-control" name="week" required>
-						<?php
-						for($i=$nowweek;$i<$nowweek+12&&$i<20;$i++){
-							if($i<0)
-								continue;
-							echo "<option value=".$i.">第".($i+1)."週-----------".$allweek[$i]."</option>";
-						}
-						?>
-					</select>
+				<input class="form-control" type="date" name="startdate" required>
+				~
+				<input class="form-control" type="date" name="finishdate" required>
 			    </div>
 			</td>
 		</tr>

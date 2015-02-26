@@ -22,7 +22,7 @@ head();
 			echo "<th>".($i+1)."</th>";
 			for($j=0;$j<$placecount;$j++){
 				echo "<th>";
-				$sql="SELECT * FROM event WHERE week=".$i." and place='".$place[$j]."' ORDER BY `id` ASC";
+				$sql="SELECT * FROM event WHERE place='".$place[$j]."' and (week=".$i." or week2=".$i." ) ORDER BY `id` ASC";
 				$rs = $db->query($sql);
 				while($row = $rs->fetch()){
 					if($row[pass]==-1){
@@ -41,7 +41,7 @@ head();
 				echo "</th>";
 			}
 			echo "<th>";
-			$sql="SELECT * FROM event WHERE week=".$i." and other=1 ORDER BY `id` ASC";
+			$sql="SELECT * FROM event WHERE other=1 and (week=".$i." or week2=".$i." ) ORDER BY `id` ASC";
 			$rs = $db->query($sql);
 			while($row = $rs->fetch()){
 				if($row[pass]==-1){
