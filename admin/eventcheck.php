@@ -22,7 +22,7 @@ if($row = $rs->fetch()){
 		</div>
 		<div class="row">
 			<div class="col-md-2">活動日期:</div>
-			<div class="col-md-10"><strong>'.$allweek[$row[week]].'</strong></div>
+			<div class="col-md-10"><strong>'.$row[startdate].'~'.$row[finishdate].'</strong></div>
 		</div>
 		<div class="row">
 			<div class="col-md-2">指導老師:</div>
