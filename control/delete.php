@@ -2,7 +2,7 @@
 require_once('database.php');
 if(!isset($_SESSION['account'])||!isset($_GET['id']))
 	header("Location: ../error.php");
-$id=mysql_escape_string($_GET['id']);
+$id=strip_tags(mysql_escape_string($_GET['id']));
 $sql="SELECT * FROM event WHERE id='{$id}'";
 $rs = $db->query($sql);
 if($row = $rs->fetch()){

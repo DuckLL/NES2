@@ -76,6 +76,7 @@ if(isset($_GET['id'])){
 	echo '
 	<p><a class="btn btn-primary btn-lg" onclick="history.back()" role="button">返回</a>';
 		if($row[applicant]==$_SESSION['account']){
+			echo '<a class="btn btn-warning btn-lg" href="eventedit.php?id='.$row[id].'">編輯</a>';
 			echo '<button class="btn btn-warning btn-lg" id="require" style="float:right">刪除</button>';
 			echo '<a class="btn btn-danger btn-lg" id="delete" style="float:right" href="control/delete.php?id='.$row[id].'">確定刪除</a>';
 		}
