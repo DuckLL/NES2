@@ -4,7 +4,7 @@ if($_SESSION['account']!=='admin'||!isset($_POST['newplace'])){
 	header("Location: ../../error.php");
 	exit;
 }
-$newplace=mysql_escape_string($_POST['newplace']);
+$newplace=strip_tags((mysql_escape_string($_POST['newplace']));
 //新增
 $sql = "INSERT INTO `place` (`name`) VALUES ('{$newplace}');";
 $rs = $db->prepare($sql);

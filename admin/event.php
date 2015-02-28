@@ -62,7 +62,7 @@ while($row = $rs->fetch()){
 	}
 	echo '
 			<a style="float:right" class="btn btn-default glyphicon glyphicon-trash" href="eventcheck.php?id='.$row[id].'&delete=1"> 刪除</a>
-			<a style="float:right" class="btn btn-danger glyphicon glyphicon-ban-circle" href="control/eventpass.php?id='.$row[id].'&pass=-1"> 退件</a>
+			<a style="float:right" class="btn btn-danger glyphicon glyphicon-ban-circle" href="eventwithdraw.php?id='.$row[id].'"> 退件</a>
 			<a style="float:right" class="btn btn-warning glyphicon glyphicon-minus" href="control/eventpass.php?id='.$row[id].'&pass=2"> 重審</a>
 			<a style="float:right" class="btn btn-success glyphicon glyphicon-ok-circle" href="control/eventpass.php?id='.$row[id].'&pass=1"> 通過</a>
 		</td>
