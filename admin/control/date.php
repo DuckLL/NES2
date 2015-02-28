@@ -4,7 +4,7 @@ if($_SESSION['account']!=='admin'||!isset($_POST['firstday'])){
 	header("Location: ../../error.php");
 	exit;
 }
-$firstday=mysql_escape_string($_POST['firstday']);
+$firstday=strip_tags(mysql_escape_string($_POST['firstday']));
 $sql = "UPDATE config SET firstday='{$firstday}' WHERE id=1";
 $rs = $db->prepare($sql);
 $rs->execute();
