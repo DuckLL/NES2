@@ -15,19 +15,19 @@ head();
 			<td colspan="2" style="border:1px solid black">
 				<label class="col-sm-2 control-label">活動名稱</label>
 				<div class="col-sm-10">
-			      <input class="form-control" name="name" size="100" required>
-    			</div>
+					<input class="form-control" name="name" size="100" required>
+				</div>
 			</td>
 		</tr>
 		<tr style="border:1px solid black">
 			<td colspan="2" style="border:1px solid black">
-			    <label class="col-sm-2 control-label">活動時間</label>
+				<label class="col-sm-2 control-label">活動時間</label>
 				<div class="col-sm-10">
-				<input class="form-control" type="date" name="startdate" required>
-				~
-				<input class="form-control" type="date" name="finishdate" required>
-				(yyyy-mm-dd)
-			    </div>
+					<input class="form-control" type="date" name="startdate" required>
+					~
+					<input class="form-control" type="date" name="finishdate" required>
+					(yyyy-mm-dd)
+				</div>
 			</td>
 		</tr>
 		<tr style="border:1px solid black">
@@ -45,38 +45,38 @@ head();
 			<td id="other">
 				<label>其他地點</label>
 				<input class="form-control" name="other">
-				</div>
-			</td>
-		</tr>
-		<tr style="border:1px solid black">
-			<td style="border:1px solid black">
-				<label>社團名稱</label>
-				<input class="form-control" name="group" required>
-			</td>
-			<td style="border:1px solid black">
-				<label>活動負責人</label>
-				<input class="form-control" name="leader" required>
-				<label>電話</label>
-				<input class="form-control" name="phone" required>
-			</td>
-		</tr>
-		<tr style="border:1px solid black">
-			<td style="border:1px solid black">
-				<label>指導老師</label>
-				<input class="form-control" name="teacher" required>
-			</td>
-			<td style="border:1px solid black">
-				<label>活動負責人2</label>
-				<input class="form-control" name="leader2" required>
-				<label>電話</label>
-				<input class="form-control" name="phone2" required>
-			</td>
-		</tr>
-	</table>
-	<label>活動內容(500字內 企劃書請附上連結)</label>
-	<textarea class="form-control ckeditor" name="content" required cols="100" rows="20"></textarea> 
-	<br>
-	<input type="submit"  class="btn btn-primary"  id="submit" value="送出" style="float:right;">	
+			</div>
+		</td>
+	</tr>
+	<tr style="border:1px solid black">
+		<td style="border:1px solid black">
+			<label>社團名稱</label>
+			<input class="form-control" name="group" required>
+		</td>
+		<td style="border:1px solid black">
+			<label>活動負責人</label>
+			<input class="form-control" name="leader" required>
+			<label>電話</label>
+			<input class="form-control" name="phone" required>
+		</td>
+	</tr>
+	<tr style="border:1px solid black">
+		<td style="border:1px solid black">
+			<label>指導老師</label>
+			<input class="form-control" name="teacher" required>
+		</td>
+		<td style="border:1px solid black">
+			<label>活動負責人2</label>
+			<input class="form-control" name="leader2" required>
+			<label>電話</label>
+			<input class="form-control" name="phone2" required>
+		</td>
+	</tr>
+</table>
+<label>活動內容(500字內 企劃書請附上連結)</label>
+<textarea class="form-control ckeditor" name="content" required cols="100" rows="20"></textarea> 
+<br>
+<input type="submit"  class="btn btn-primary"  id="submit" value="送出" style="float:right;">	
 </form>
 <?php
 tail();

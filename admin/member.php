@@ -30,7 +30,7 @@ echo '
 <table data-toggle="table" data-card-view="true" class="small">
 	<thead>
 		<tr>
-			<th>帳號</tn>
+			<th>帳號</th>
 			<th>姓名</th>
 			<th>學號</th>
 			<th>Email</th>
@@ -49,8 +49,8 @@ echo '
 			';
 			if($row[account]!=='admin'){
 				echo '
-			<td><a class="btn btn-primary glyphicon glyphicon-trash" href="membercheck.php?id='.$row[id].'">刪除</a></td>
-		</tr>';
+				<td><a class="btn btn-primary glyphicon glyphicon-trash" href="membercheck.php?id='.$row[id].'">刪除</a></td>
+			</tr>';
 		}
 	}
 	echo '
@@ -76,7 +76,8 @@ echo '
 		} else {
 			$forward = "disabled";
 		}
-		echo '<li class="'.$forward.'"><a href="member.php?page='.($page+1).'" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li></ul>
-	</nav>';
-	tail();
-	?>
+		echo '<li class="'.$forward.'"><a href="member.php?page='.($page+1).'" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+	</ul>
+</nav>';
+tail();
+?>
