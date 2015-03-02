@@ -26,6 +26,10 @@ if($row = $rs->fetch()){
 			<div class="col-md-10"><strong>'.$row[startdate].'~'.$row[finishdate].'</strong></div>
 		</div>
 		<div class="row">
+			<div class="col-md-2">社團名稱:</div>
+			<div class="col-md-10"><strong>'.$row[group].'</strong></div>
+		</div>
+		<div class="row">
 			<div class="col-md-2">指導老師:</div>
 			<div class="col-md-10"><strong>'.$row[teacher].'</strong></div>
 		</div>';
@@ -74,7 +78,7 @@ if($row = $rs->fetch()){
 	echo '
 	<form action="control/eventwithdraw.php?id='.$row[id].'" method="post">
 		<textarea class="form-control ckeditor" name="withdraw" required cols="100" rows="20">
-		'.$row[withdraw].'	
+			'.$row[withdraw].'	
 		</textarea>
 		<input type="submit" value="退件" class="btn btn-lg btn-danger" style="float:right">
 		<a class="btn btn-primary btn-lg" onclick="history.back()" role="button">返回</a>
@@ -82,7 +86,7 @@ if($row = $rs->fetch()){
 	';
 	echo '
 	
-	</div>';
+</div>';
 
 }
 tail();

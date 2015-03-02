@@ -38,6 +38,7 @@ head();
 					<input class="form-control" type="date" name="startdate" required value="<?php echo $row[startdate]; ?>">
 					~
 					<input class="form-control" type="date" name="finishdate" required value="<?php echo $row[finishdate]; ?>">
+					(yyyy-mm-dd)
 				</div>
 			</td>
 		</tr>
@@ -84,9 +85,9 @@ head();
 		</td>
 	</tr>
 </table>
-<label>活動內容(500字內)</label>
+<label>活動內容(500字內 企劃書請附上連結)</label>
 <textarea class="form-control ckeditor" name="content" required cols="100" rows="20"> 
-<?php echo $row[content]; ?>
+	<?php echo $row[content]; ?>
 </textarea>
 <br>
 <input type="submit"  class="btn btn-primary"  id="submit" value="送出" style="float:right;">	

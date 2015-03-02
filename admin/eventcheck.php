@@ -25,6 +25,10 @@ if($row = $rs->fetch()){
 			<div class="col-md-10"><strong>'.$row[startdate].'~'.$row[finishdate].'</strong></div>
 		</div>
 		<div class="row">
+			<div class="col-md-2">社團名稱:</div>
+			<div class="col-md-10"><strong>'.$row[group].'</strong></div>
+		</div>
+		<div class="row">
 			<div class="col-md-2">指導老師:</div>
 			<div class="col-md-10"><strong>'.$row[teacher].'</strong></div>
 		</div>';
@@ -71,9 +75,9 @@ if($row = $rs->fetch()){
 		echo '
 	</div>
 	<p>';
-	if($_GET['delete']==1)
-	echo '<a class="btn btn-danger btn-lg" id="delete" href="control/eventdelete.php?id='.$row[id].'">確定刪除</a>';
-	echo '<a class="btn btn-primary btn-lg" onclick="history.back()" role="button">返回</a>
+		if($_GET['delete']==1)
+			echo '<a class="btn btn-danger btn-lg" id="delete" href="control/eventdelete.php?id='.$row[id].'">確定刪除</a>';
+		echo '<a class="btn btn-primary btn-lg" onclick="history.back()" role="button">返回</a>
 	</p></div>';
 
 }
