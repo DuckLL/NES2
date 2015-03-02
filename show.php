@@ -45,17 +45,17 @@ head();
 			$rs = $db->query($sql);
 			while($row = $rs->fetch()){
 				if($row[pass]==-1){
-						echo '<a href="event.php?id='.$row[id].'" class="btn btn-danger">'.$row[name]."</a><br>";
-					}
-					if($row[pass]==0){
-						echo '<a href="event.php?id='.$row[id].'" class="btn btn-info">'.$row[name]."</a><br>";
-					}
-					if($row[pass]==1){
-						echo '<a href="event.php?id='.$row[id].'" class="btn btn-success">'.$row[name]."</a><br>";
-					}
-					if($row[pass]==2){
-						echo '<a href="event.php?id='.$row[id].'" class="btn btn-warning">'.$row[name]."</a><br>";
-					}
+					echo '<a href="event.php?id='.$row[id].'" class="btn btn-danger">'.$row[name]."</a><br>";
+				}
+				if($row[pass]==0){
+					echo '<a href="event.php?id='.$row[id].'" class="btn btn-info">'.$row[name]."</a><br>";
+				}
+				if($row[pass]==1){
+					echo '<a href="event.php?id='.$row[id].'" class="btn btn-success">'.$row[name]."</a><br>";
+				}
+				if($row[pass]==2){
+					echo '<a href="event.php?id='.$row[id].'" class="btn btn-warning">'.$row[name]."</a><br>";
+				}
 			}
 			echo "</th>";
 			echo "</tr>";
