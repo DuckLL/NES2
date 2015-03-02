@@ -30,6 +30,21 @@ $place=strip_tags(mysql_escape_string($place));
 $startdate=strip_tags(mysql_escape_string($_POST['startdate']));
 $finishdate=strip_tags(mysql_escape_string($_POST['finishdate']));
 
+if(!preg_match("#^((19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01]))*$#",$startdate)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("日期格式錯誤 (yyyy-mm-dd)");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
+if(!preg_match("#^((19|20)?[0-9]{2}[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01]))*$#",$finishdate)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("日期格式錯誤 (yyyy-mm-dd)");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
+
 $start=explode('-', $startdate);
 $starttimestamp=mktime(0,0,0,$start[1],$start[2],$start[0]);
 $finish=explode('-', $finishdate);
@@ -65,6 +80,49 @@ $leader=strip_tags(mysql_escape_string($_POST['leader']));
 $phone=strip_tags(mysql_escape_string($_POST['phone']));
 $leader2=strip_tags(mysql_escape_string($_POST['leader2']));
 $phone2=strip_tags(mysql_escape_string($_POST['phone2']));
+
+if(!preg_match("/^([\x7f-\xff]+)$/",$group)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("社團名稱只能使用中文");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
+if(!preg_match("/^([\x7f-\xff]+)$/",$teacher)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("指導老師只能使用中文");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
+if(!preg_match("/^([\x7f-\xff]+)$/",$leader)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("負責人只能使用中文");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
+if(!preg_match("/^([\x7f-\xff]+)$/",$leader2)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("負責人只能使用中文");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
+if(!preg_match("/^[0-9]*$/",$phone)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("電話只能使用數字");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
+if(!preg_match("/^[0-9]*$/",$phone2)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("電話只能使用數字");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
 
 $sql = "UPDATE `event` SET `name` = '{$name}', `group` = '{$group}', `place` = '{$place}', `other` = '{$other}', `startdate` = '{$startdate}', `finishdate` = '{$finishdate}', `week` = '{$week}', `week2` = '{$week2}', `teacher` = '{$teacher}', `leader` = '{$leader}', `phone` = '{$phone}', `leader2` = '{$leader2}', `phone2` = '{$phone2}', `pass` = '2' WHERE `id` = '{$id}' ";
 $rs = $db->prepare($sql);
