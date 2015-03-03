@@ -1,5 +1,9 @@
 <?php
-require_once('database.php');
+require_once('../../control/database.php');
+if($_SESSION['account']!=='admin'){
+	header("Location: ../error.php");
+	exit;
+}
 if(!preg_match("/^[a-zA-Z]\w*$/",$_POST['account'])){
 	$ret="您的ID格式不正確 第一個字不為數字，只接受大小寫字母、數字及底線";
 }

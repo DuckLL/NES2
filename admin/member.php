@@ -25,12 +25,14 @@ if($page<0)
 $offset=$page*$shownum;
 $sql="SELECT * FROM member LIMIT ".$offset.",".$shownum;
 $rs = $db->query($sql);
-echo "總人數：".$total."<br>";
+echo "總人數：".$total;
+echo '<a style="float:right" class="btn btn-success" href="register.php">註冊新會員</a>';
 echo '
 <table data-toggle="table" data-card-view="true" class="small">
 	<thead>
 		<tr>
 			<th>帳號</th>
+			<th>社團</th>
 			<th>姓名</th>
 			<th>學號</th>
 			<th>Email</th>
@@ -42,6 +44,7 @@ echo '
 		echo '
 		<tr>
 			<td>'.$row[account].'</td>
+			<td>'.$row[groups].'</td>
 			<td>'.$row[name].'</td>
 			<td>'.$row[school].'</td>
 			<td>'.$row[email].'</td>
@@ -49,7 +52,10 @@ echo '
 			';
 			if($row[account]!=='admin'){
 				echo '
-				<td><a class="btn btn-primary glyphicon glyphicon-trash" href="membercheck.php?id='.$row[id].'">刪除</a></td>
+				<td>
+				<a class="btn btn-primary glyphicon glyphicon-trash" href="membercheck.php?id='.$row[id].'">刪除</a>
+				<a class="btn btn-warning glyphicon glyphicon-cog" href="control/forget.php?account='.$row[account].'">修改密碼</a>
+				</td>
 			</tr>';
 		}
 	}

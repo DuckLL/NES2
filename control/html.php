@@ -44,7 +44,6 @@ function head(){
 			<ul class="nav navbar-nav navbar-right">';
 				if (!isset($_SESSION['account'])){
 					echo '
-					<li><a href="register.php" class="glyphicon glyphicon-pencil"> 註冊</a></li>
 					<li><a href="login.php" class="glyphicon glyphicon-log-in"> 登入</a></li>';
 				} 
 				else{

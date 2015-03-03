@@ -24,7 +24,10 @@ $row = $rs->fetch();
 <br>
 <br>
 <form method="post" action="control/edit.php">
-	<label>真實姓名（ex:王大明）</label>
+	<label>社團名稱： </label>
+	<label><?php echo $row[groups];?></label>
+	<br>
+	<label>負責人</label>
 	<input class="form-control" type="text" name="name" value="<?php echo $row[name];?>" required>
 	<label>學號（ex:1001234）</label>
 	<input class="form-control" type="text" name="school" value="<?php echo $row[school];?>" required>	

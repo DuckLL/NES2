@@ -13,22 +13,28 @@ if(!preg_match("/^([\x7f-\xff]+)$/",$_POST['name'])){
 	echo "</script>";
 	exit;
 }
-if(!preg_match("/^[0-9]*$/",$_POST['school'])){
+if(!preg_match("/^[0-9]{7}$/",$_POST['school'])){
 	echo "<script type=\"text/javascript\">";
-	echo 'alert("學號只能使用數字");';
+	echo 'alert("學號格式錯誤");';
 	echo "history.go(-1);";
 	echo "</script>";
 	exit;
 }
-if(!preg_match("/^[0-9]*$/",$_POST['phone'])){
+if(!preg_match("/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4})*$/",$_POST['email'])){
 	echo "<script type=\"text/javascript\">";
-	echo 'alert("電話只能使用數字");';
+	echo 'alert("email格式錯誤");';
 	echo "history.go(-1);";
 	echo "</script>";
 	exit;
 }
-$email=strip_tags(mysql_escape_string($_POST['email']));
-$sql = "UPDATE member SET name = '{$name}', school = '{$_POST['school']}', email='{$email}', phone = '{$_POST['phone']}' WHERE account = '{$_SESSION['account']}'";
+if(!preg_match("/^[0-9]{10}$/",$_POST['phone'])){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("電話格式錯誤");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+}
+$sql = "UPDATE member SET name = '{$_POST['name']}', school = '{$_POST['school']}', email='{$_POST['email']}', phone = '{$_POST['phone']}' WHERE account = '{$_SESSION['account']}'";
 $rs = $db->prepare($sql);
 $rs->execute();
 echo "<script type=\"text/javascript\">";
