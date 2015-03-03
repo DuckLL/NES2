@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: localhost
--- 產生時間： 2015 年 02 月 26 日 13:47
+-- 產生時間： 2015 年 03 月 03 日 18:49
 -- 伺服器版本: 5.6.22
 -- PHP 版本： 5.5.14
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 --
 
 INSERT INTO `config` (`id`, `about`, `firstday`) VALUES
-(1, '<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li><span style="font-family:comic sans ms,cursive"><strong><span style="font-size:48px">大型活動可以申請的日期是活動前<span style="color:#FF0000">12個禮拜</span></span></strong></span></li>\r\n	<li>\r\n	<h2><span style="font-family:comic sans ms,cursive"><strong><span style="font-size:48px">排列順序是<span style="background-color:#FFFFE0">依據申請時間排列 </span>&nbsp;<img alt="" src="http://upload.wikimedia.org/wikipedia/zh/6/67/NCYU.svg" style="height:300px; width:300px" /></span></strong></span></h2>\r\n	</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n', '2015-02-23');
+(1, '<p>&nbsp;</p>\r\n\r\n<ul>\r\n	<li><span style="font-family:comic sans ms,cursive"><strong><span style="font-size:48px">大型活動可以申請的日期是活動前<span style="color:#FF0000">12個禮拜</span></span></strong></span></li>\r\n	<li>\r\n	<h2><span style="font-family:comic sans ms,cursive"><strong><span style="font-size:48px">排列順序是<span style="background-color:#FFFFE0">依據申請時間排列 </span>&nbsp;</span></strong></span></h2>\r\n	</li>\r\n</ul>\r\n', '2015-02-23');
 
 -- --------------------------------------------------------
 
@@ -61,20 +61,22 @@ CREATE TABLE IF NOT EXISTS `event` (
   `phone` varchar(30) NOT NULL,
   `leader2` varchar(30) NOT NULL,
   `phone2` varchar(30) NOT NULL,
+  `plan` varchar(300) NOT NULL,
   `applicant` varchar(30) NOT NULL,
   `submittime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `pass` int(11) NOT NULL,
   `withdraw` varchar(300) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `event`
 --
 
-INSERT INTO `event` (`id`, `name`, `group`, `place`, `other`, `startdate`, `finishdate`, `week`, `week2`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `applicant`, `submittime`, `pass`, `withdraw`) VALUES
-(88, 'asdf', 'asdf', '學生餐廳二樓', 1, '2015-03-16', '2015-03-27', 3, 4, '', 'qwer', 'wert', 'sdfg', '1234', 'qwer', 'duck', '2015-02-26 13:28:26', -1, ''),
-(89, 'asdf', 'ZXCv', '學生活動中心一樓', 0, '2015-02-23', '2015-02-27', 0, 0, '<p>zdfg</p>\r\n', 'dfgh', 'fghj', 'erty', 'ert', 'qwer', 'duck', '2015-02-26 13:28:10', 2, ''),
-(90, 'wert', 'asdf', '學生活動中心一樓', 0, '2015-02-27', '2015-03-06', 0, 1, '', 'qwer', 'erty', 'erty', 'qwer', 'rtyu', 'duck', '2015-02-26 13:28:09', 1, '');
+INSERT INTO `event` (`id`, `name`, `group`, `place`, `other`, `startdate`, `finishdate`, `week`, `week2`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `plan`, `applicant`, `submittime`, `pass`, `withdraw`) VALUES
+(103, '資工週', '資工系', '學活一樓＋學活一樓小舞台', 0, '2015-03-23', '2015-03-27', 4, 4, '<p>http://www<span style="color:#FFA500">.ncyu.edu.tw/csie</span><span style="font-size:72px"><span style="color:#FFA500">/http://</span>www.ncyu.edu.tw/csie/http:/<span style="background-color:#008000">/ww</span>w.ncyu.edu.tw/csie/</span></p>\r\n', '科', '廖子慶', '0978150802', '蘇', '0900000000', 'http://www.ncyu.edu.tw/csie/', 'csie', '2015-03-03 18:42:43', 0, ''),
+(104, '電資小活動', '資工系', '學活一樓小舞台', 0, '2015-03-30', '2015-04-01', 5, 5, '', '科', '廖子慶', '0978150802', '蘇', '0900000000', 'http://www.ncyu.edu.tw/csie/', 'csie', '2015-03-03 18:47:22', 1, ''),
+(105, 'Sometimes攝影展', '攝影社', '學活一樓', 0, '2015-03-09', '2015-03-20', 2, 3, '<p>http://student.ncyu.edu.tw/~club0031/#</p>\r\n\r\n<p>http://student.ncyu.edu.tw/~club0031/#</p>\r\n\r\n<p>http://student.ncyu.edu.tw/~club0031/#</p>\r\n', '科', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'http://student.ncyu.edu.tw/~club0031/#', 'duck', '2015-03-03 18:47:35', -1, '<p>指導老師錯誤</p>\r\n'),
+(106, '攝影社服務學習', '攝影社', '電物系草皮', 0, '2015-03-12', '2015-03-13', 2, 2, '<p>顆顆</p>\r\n', '科', '廖子慶', '0978150802', '蔡秉諺', '0900000000', 'http://student.ncyu.edu.tw/~club0031/#', 'duck', '2015-03-03 18:47:02', 2, '');
 
 -- --------------------------------------------------------
 
@@ -86,19 +88,21 @@ CREATE TABLE IF NOT EXISTS `member` (
   `id` int(11) NOT NULL,
   `account` varchar(30) NOT NULL,
   `password` varchar(100) NOT NULL,
+  `groups` varchar(30) NOT NULL,
   `name` varchar(30) NOT NULL,
   `school` varchar(10) NOT NULL,
   `email` varchar(30) NOT NULL,
   `phone` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `member`
 --
 
-INSERT INTO `member` (`id`, `account`, `password`, `name`, `school`, `email`, `phone`) VALUES
-(1, 'admin', '66b65567cedbc743bda3417fb813b9ba', '管理員', '1357924680', 'admin@mail.ncyu.edu.tw', '0000000000'),
-(2, 'duck', '63d6ad0c1e745ab14f44e07a090bfd32', '廖子慶', '1013045', 'aa334477@hotmail.com', '0978150802');
+INSERT INTO `member` (`id`, `account`, `password`, `groups`, `name`, `school`, `email`, `phone`) VALUES
+(1, 'admin', '66b65567cedbc743bda3417fb813b9ba', '', '管理員', '1357924680', 'admin@mail.ncyu.edu.tw', '0000000000'),
+(2, 'duck', '63d6ad0c1e745ab14f44e07a090bfd32', '攝影社', '廖子慶', '0000000', 'xxx@gmail.com', '0900000000'),
+(6, 'csie', '23e85fa756cfb8ccd9a6b4b5a5952fef', '資工系', '蘇', '0000000', 'xxx@gmail.com', '0912345678');
 
 -- --------------------------------------------------------
 
@@ -108,19 +112,21 @@ INSERT INTO `member` (`id`, `account`, `password`, `name`, `school`, `email`, `p
 
 CREATE TABLE IF NOT EXISTS `place` (
   `id` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+  `name` varchar(100) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- 資料表的匯出資料 `place`
 --
 
 INSERT INTO `place` (`id`, `name`) VALUES
-(1, '學生活動中心一樓'),
-(2, '學生活動中心一樓舞台'),
-(3, '學生活動中心二樓'),
-(5, '電物系草皮'),
-(8, '舊福利社廣場+走道');
+(10, '學活一樓'),
+(11, '學活二樓'),
+(12, '學活一樓小舞台'),
+(13, '電物系草皮'),
+(14, '舊福利社'),
+(15, '學活一樓＋學活一樓小舞台'),
+(16, '學活一樓＋學活二樓');
 
 --
 -- 已匯出資料表的索引
@@ -163,17 +169,17 @@ ALTER TABLE `config`
 -- 使用資料表 AUTO_INCREMENT `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=107;
 --
 -- 使用資料表 AUTO_INCREMENT `member`
 --
 ALTER TABLE `member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=176;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- 使用資料表 AUTO_INCREMENT `place`
 --
 ALTER TABLE `place`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
