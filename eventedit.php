@@ -47,11 +47,22 @@ head();
 				<label>活動地點</label>
 				<select class="form-control" name="place" id="place"  required>
 					<?php
+					$other=1;
 					for($i=0;$i<$placecount;$i++){
-						echo "<option value=".$place[$i].">".$place[$i]."</option>";
+						if($row[place]==$place[$i]){
+							echo "<option selected value=".$place[$i].">".$place[$i]."</option>";
+							$other=0;
+						}
+						else{
+							echo "<option value=".$place[$i].">".$place[$i]."</option>";
+						}
 					}
+					if($other==1)
+						echo'<option value="other" selected>其他</option>';
+					else
+						echo'<option value="other">其他</option>';
 					?>
-					<option value="other" selected="1">其他</option>
+					
 				</select>
 			</td>
 			<td id="other">
@@ -82,6 +93,12 @@ head();
 			<input class="form-control" name="leader2" required value="<?php echo $row[leader2]; ?>">
 			<label>電話</label>
 			<input class="form-control" name="phone2" required value="<?php echo $row[phone2]; ?>">
+		</td>
+	</tr>
+	<tr style="border:1px solid black">
+		<td style="border:1px solid black" colspan="2">
+			<label>企劃書</label>
+			<input class="form-control" size="100" name="plan" required value="<?php echo $row[plan]; ?>">
 		</td>
 	</tr>
 </table>

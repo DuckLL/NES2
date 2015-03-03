@@ -2,7 +2,7 @@
 require_once('define.php');
 if(!isset($_SESSION['account']))
 	header("Location: ../error.php");
-if(!isset($_POST['name'])||!isset($_POST['place'])||!isset($_POST['startdate'])||!isset($_POST['finishdate'])||!isset($_POST['content'])||!isset($_POST['teacher'])||!isset($_POST['leader'])||!isset($_POST['phone'])||!isset($_POST['leader2'])||!isset($_POST['phone2'])){
+if(!isset($_POST['name'])||!isset($_POST['place'])||!isset($_POST['startdate'])||!isset($_POST['finishdate'])||!isset($_POST['content'])||!isset($_POST['teacher'])||!isset($_POST['leader'])||!isset($_POST['phone'])||!isset($_POST['leader2'])||!isset($_POST['phone2'])||!isset($_POST['plan'])){
 	header("Location: ../error.php");
 	exit;
 }
@@ -64,6 +64,7 @@ $leader=strip_tags(mysql_escape_string($_POST['leader']));
 $phone=strip_tags(mysql_escape_string($_POST['phone']));
 $leader2=strip_tags(mysql_escape_string($_POST['leader2']));
 $phone2=strip_tags(mysql_escape_string($_POST['phone2']));
+$plan=strip_tags(mysql_escape_string($_POST['plan']));
 
 if(!preg_match("/^([\x7f-\xff]+)$/",$teacher)){
 	echo "<script type=\"text/javascript\">";
@@ -86,22 +87,29 @@ if(!preg_match("/^([\x7f-\xff]+)$/",$leader2)){
 	echo "</script>";
 	exit;
 }
-if(!preg_match("/^[0-9]*$/",$phone)){
+if(!preg_match("/^[0-9]{10}$/",$phone)){
 	echo "<script type=\"text/javascript\">";
-	echo 'alert("電話只能使用數字");';
+	echo 'alert("電話格式錯誤");';
 	echo "history.go(-1);";
 	echo "</script>";
 	exit;
 }
-if(!preg_match("/^[0-9]*$/",$phone2)){
+if(!preg_match("/^[0-9]{10}$/",$phone2)){
 	echo "<script type=\"text/javascript\">";
-	echo 'alert("電話只能使用數字");';
+	echo 'alert("電話格式錯誤");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+} 
+if(!preg_match("/(https?:\/\/[\w-\.]+(:\d+)?(\/[~\w\/\.]*)?(\?\S*)?(#\S*)?)/",$plan)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("網址格式錯誤");';
 	echo "history.go(-1);";
 	echo "</script>";
 	exit;
 } 
 
-$sql = "INSERT INTO `event` (`name`, `group`, `place`, `other`, `startdate`, `finishdate`, `week`, `week2`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `applicant`, `pass`) VALUES ('{$name}', '{$_SESSIOIN['groups']}', '{$place}', $other, '{$startdate}', '{$finishdate}', '{$week}', '{$week2}', '{$content}', '{$teacher}', '{$leader}', '{$phone}', '{$leader2}', '{$phone2}', '{$_SESSION['account']}', 0)";
+$sql = "INSERT INTO `event` (`name`, `group`, `place`, `other`, `startdate`, `finishdate`, `week`, `week2`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `applicant`, `pass`, `plan`) VALUES ('{$name}', '{$_SESSION['groups']}', '{$place}', $other, '{$startdate}', '{$finishdate}', '{$week}', '{$week2}', '{$content}', '{$teacher}', '{$leader}', '{$phone}', '{$leader2}', '{$phone2}', '{$_SESSION['leader']}', 0, '{$plan}')";
 //echo $sql;
 $rs = $db->prepare($sql);
 $rs->execute();
