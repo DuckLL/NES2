@@ -51,9 +51,7 @@ if($row = $rs->fetch()){
 	echo '
 	<div class="row">
 		<div class="col-md-2">申請時間:</div>
-		<div class="col-md-3"><strong>'.$row[submittime].'</strong></div>
-		<div class="col-md-2">申請人:</div>
-		<div class="col-md-3"><strong>'.$row[applicant].'</strong></div>';
+		<div class="col-md-3"><strong>'.$row[submittime].'</strong></div>';
 		if($row[pass]==1)
 			echo '
 		<div class="col-md-2" style="float:right;"><span class="label label-success"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> 審核通過</span></div>';

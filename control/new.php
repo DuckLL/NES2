@@ -109,7 +109,7 @@ if(!preg_match("/(https?:\/\/[\w-\.]+(:\d+)?(\/[~\w\/\.]*)?(\?\S*)?(#\S*)?)/",$p
 	exit;
 } 
 
-$sql = "INSERT INTO `event` (`name`, `group`, `place`, `other`, `startdate`, `finishdate`, `week`, `week2`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `applicant`, `pass`, `plan`) VALUES ('{$name}', '{$_SESSION['groups']}', '{$place}', $other, '{$startdate}', '{$finishdate}', '{$week}', '{$week2}', '{$content}', '{$teacher}', '{$leader}', '{$phone}', '{$leader2}', '{$phone2}', '{$_SESSION['leader']}', 0, '{$plan}')";
+$sql = "INSERT INTO `event` (`name`, `group`, `place`, `other`, `startdate`, `finishdate`, `week`, `week2`, `content`, `teacher`, `leader`, `phone`, `leader2`, `phone2`, `applicant`, `pass`, `plan`) VALUES ('{$name}', '{$_SESSION['groups']}', '{$place}', $other, '{$startdate}', '{$finishdate}', '{$week}', '{$week2}', '{$content}', '{$teacher}', '{$leader}', '{$phone}', '{$leader2}', '{$phone2}', '{$_SESSION['account']}', 0, '{$plan}')";
 //echo $sql;
 $rs = $db->prepare($sql);
 $rs->execute();
