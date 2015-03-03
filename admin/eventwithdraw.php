@@ -32,28 +32,21 @@ if($row = $rs->fetch()){
 		<div class="row">
 			<div class="col-md-2">指導老師:</div>
 			<div class="col-md-10"><strong>'.$row[teacher].'</strong></div>
-		</div>';
-		echo '
+		</div>
 		<div class="row">
 			<div class="col-md-2">負責人1:</div>
-			<div class="col-md-2"><strong>'.$row[leader].'</strong></div>';
-			if(isset($_SESSION['account']))
-				echo '
+			<div class="col-md-2"><strong>'.$row[leader].'</strong></div>
 			<div class="col-md-8">'.$row[phone].'</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">負責人2:</div>
+			<div class="col-md-2"><strong>'.$row[leader2].'</strong></div>
+			<div class="col-md-8">'.$row[phone2].'</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">企劃書:</div>
+			<a class="col-md-8" href="'.$row[plan].'" target="_blank">'.$row[plan].'</a>
 		</div>';
-		else
-			echo '
-		<div class="col-md-8"><em>"登入後才能查詢電話"</em></div>
-	</div>';
-	echo '
-	<div class="row">
-		<div class="col-md-2">負責人2:</div>
-		<div class="col-md-2"><strong>'.$row[leader2].'</strong></div>';
-		if(isset($_SESSION['account']))
-			echo '<div class="col-md-8">'.$row[phone2].'</div></div>';
-		else
-			echo '<div class="col-md-8"><em>"登入後才能查詢電話"</em></div>
-	</div>';
 	echo '<div class="well" style="background-color:#ffe680;word-wrap:break-word">'.$row[content].'</div>';
 	echo '
 	<div class="row">

@@ -79,6 +79,7 @@ $leader=strip_tags(mysql_escape_string($_POST['leader']));
 $phone=strip_tags(mysql_escape_string($_POST['phone']));
 $leader2=strip_tags(mysql_escape_string($_POST['leader2']));
 $phone2=strip_tags(mysql_escape_string($_POST['phone2']));
+	$plan=strip_tags(mysql_escape_string($_POST['plan']));
 
 if(!preg_match("/^([\x7f-\xff]+)$/",$teacher)){
 	echo "<script type=\"text/javascript\">";
@@ -115,8 +116,15 @@ if(!preg_match("/^[0-9]*$/",$phone2)){
 	echo "</script>";
 	exit;
 }
+if(!preg_match("/(https?:\/\/[\w-\.]+(:\d+)?(\/[~\w\/\.]*)?(\?\S*)?(#\S*)?)/",$plan)){
+	echo "<script type=\"text/javascript\">";
+	echo 'alert("網址格式錯誤");';
+	echo "history.go(-1);";
+	echo "</script>";
+	exit;
+} 
 
-$sql = "UPDATE `event` SET `name` = '{$name}', `place` = '{$place}', `other` = '{$other}', `startdate` = '{$startdate}', `finishdate` = '{$finishdate}', `week` = '{$week}', `week2` = '{$week2}', `teacher` = '{$teacher}', `leader` = '{$leader}', `phone` = '{$phone}', `leader2` = '{$leader2}', `phone2` = '{$phone2}', `pass` = '2' WHERE `id` = '{$id}' ";
+$sql = "UPDATE `event` SET `plan` = '{$plan}',`name` = '{$name}', `place` = '{$place}', `other` = '{$other}', `startdate` = '{$startdate}', `finishdate` = '{$finishdate}', `week` = '{$week}', `week2` = '{$week2}', `teacher` = '{$teacher}', `leader` = '{$leader}', `phone` = '{$phone}', `leader2` = '{$leader2}', `phone2` = '{$phone2}', `pass` = '2' WHERE `id` = '{$id}' ";
 $rs = $db->prepare($sql);
 $rs->execute();
 header("Location: ../show.php");
