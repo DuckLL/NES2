@@ -1,8 +1,12 @@
 <?php
 require_once('control/html.php');
+if($_SESSION['account']!=='admin'){
+	header("Location: ../error.php");
+	exit;
+}
 head();
 ?>
-<script src="js/register.js"></script>
+<script src="control/register.js"></script>
 <form method="post" action="control/register.php">
 	<label >帳號</label>
 	<input class="form-control" name="account" id="account" onkeyup="checkRegAcc()" required>
@@ -12,6 +16,8 @@ head();
 	<input class="form-control" type="password" name="password" id="password" required>
 	<label>密碼確認</label>
 	<input class="form-control" type="password" name="password2" id="password2" required>
+	<label>社團名稱（中文限定 ex:學生會）</label>
+	<input class="form-control" type="text" name="groups" required>
 	<label>姓名（中文限定 ex:王大明）</label>
 	<input class="form-control" type="text" name="name" required>
 	<label>學號（數字限定 ex:1001234）</label>
