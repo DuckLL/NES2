@@ -16,6 +16,7 @@ $rs = $db->query($sql);
 $row = $rs->fetch();
 if(md5(sha1(md5($_POST['password'])))===$row[password]){
 	$_SESSION['account']=$row[account];
+	$_SESSION['groups']=$row[groups];
 	if($_SESSION['account']=='admin')
 		header("Location: ../admin/");
 	else

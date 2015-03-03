@@ -4,7 +4,7 @@ if(!isset($_SESSION['account'])||!isset($_GET['id'])){
 	header("Location: ../error.php");
 	exit;
 }
-if(!isset($_POST['name'])||!isset($_POST['group'])||!isset($_POST['place'])||!isset($_POST['startdate'])||!isset($_POST['finishdate'])||!isset($_POST['content'])||!isset($_POST['teacher'])||!isset($_POST['leader'])||!isset($_POST['phone'])||!isset($_POST['leader2'])||!isset($_POST['phone2'])){
+if(!isset($_POST['name'])||!isset($_POST['place'])||!isset($_POST['startdate'])||!isset($_POST['finishdate'])||!isset($_POST['content'])||!isset($_POST['teacher'])||!isset($_POST['leader'])||!isset($_POST['phone'])||!isset($_POST['leader2'])||!isset($_POST['phone2'])){
 	header("Location: ../error.php");
 	exit;
 }
@@ -24,7 +24,6 @@ else{
 $place=$_POST['place']=='other'?$_POST['other']:$_POST['place'];
 $other=$_POST['place']=='other'?1:0;
 $name=strip_tags(mysql_escape_string($_POST['name']));
-$group=strip_tags(mysql_escape_string($_POST['group']));
 $place=strip_tags(mysql_escape_string($place));
 
 $startdate=strip_tags(mysql_escape_string($_POST['startdate']));
@@ -81,13 +80,6 @@ $phone=strip_tags(mysql_escape_string($_POST['phone']));
 $leader2=strip_tags(mysql_escape_string($_POST['leader2']));
 $phone2=strip_tags(mysql_escape_string($_POST['phone2']));
 
-if(!preg_match("/^([\x7f-\xff]+)$/",$group)){
-	echo "<script type=\"text/javascript\">";
-	echo 'alert("社團名稱只能使用中文");';
-	echo "history.go(-1);";
-	echo "</script>";
-	exit;
-}
 if(!preg_match("/^([\x7f-\xff]+)$/",$teacher)){
 	echo "<script type=\"text/javascript\">";
 	echo 'alert("指導老師只能使用中文");';
@@ -124,8 +116,8 @@ if(!preg_match("/^[0-9]*$/",$phone2)){
 	exit;
 }
 
-$sql = "UPDATE `event` SET `name` = '{$name}', `group` = '{$group}', `place` = '{$place}', `other` = '{$other}', `startdate` = '{$startdate}', `finishdate` = '{$finishdate}', `week` = '{$week}', `week2` = '{$week2}', `teacher` = '{$teacher}', `leader` = '{$leader}', `phone` = '{$phone}', `leader2` = '{$leader2}', `phone2` = '{$phone2}', `pass` = '2' WHERE `id` = '{$id}' ";
+$sql = "UPDATE `event` SET `name` = '{$name}', `place` = '{$place}', `other` = '{$other}', `startdate` = '{$startdate}', `finishdate` = '{$finishdate}', `week` = '{$week}', `week2` = '{$week2}', `teacher` = '{$teacher}', `leader` = '{$leader}', `phone` = '{$phone}', `leader2` = '{$leader2}', `phone2` = '{$phone2}', `pass` = '2' WHERE `id` = '{$id}' ";
 $rs = $db->prepare($sql);
 $rs->execute();
-header("Location: ../event.php?id=".$id);
+header("Location: ../show.php");
 ?>

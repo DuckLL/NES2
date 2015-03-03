@@ -73,7 +73,10 @@ if($row = $rs->fetch()){
 			echo '
 		<div class="col-md-2"><span class="label label-danger"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 審核退回</span></div>';
 		echo '
-	</div>
+	</div>';
+	if($row[pass]==-1)
+		echo '<div class="well" style="background-color:#e88;word-wrap:break-word">'.$row[withdraw].'</div>';
+	echo '
 	<p>';
 		if($_GET['delete']==1)
 			echo '<a class="btn btn-danger btn-lg" id="delete" href="control/eventdelete.php?id='.$row[id].'">確定刪除</a>';
