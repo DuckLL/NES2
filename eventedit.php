@@ -38,7 +38,7 @@ head();
 					<input class="form-control" type="date" name="startdate" required value="<?php echo $row[startdate]; ?>">
 					~
 					<input class="form-control" type="date" name="finishdate" required value="<?php echo $row[finishdate]; ?>">
-					(yyyy-mm-dd)
+					<label>(yyyy-mm-dd)目前可以借到第<?php echo $nowweek+13;?>週</label>
 				</div>
 			</td>
 		</tr>
@@ -51,7 +51,7 @@ head();
 						echo "<option value=".$place[$i].">".$place[$i]."</option>";
 					}
 					?>
-					<option value="other">其他</option>
+					<option value="other" selected="1">其他</option>
 				</select>
 			</td>
 			<td id="other">
@@ -63,7 +63,7 @@ head();
 	<tr style="border:1px solid black">
 		<td style="border:1px solid black">
 			<label>社團名稱</label>
-			<input class="form-control" name="group" required value="<?php echo $row[group]; ?>">
+			<label><?php echo $_SESSION['groups'];?></label>
 		</td>
 		<td style="border:1px solid black">
 			<label>活動負責人</label>

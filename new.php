@@ -26,7 +26,7 @@ head();
 					<input class="form-control" type="date" name="startdate" required>
 					~
 					<input class="form-control" type="date" name="finishdate" required>
-					(yyyy-mm-dd)
+					<label>(yyyy-mm-dd)目前可以借到第<?php echo $nowweek+13;?>週</label>
 				</div>
 			</td>
 		</tr>
@@ -45,38 +45,43 @@ head();
 			<td id="other">
 				<label>其他地點</label>
 				<input class="form-control" name="other">
-			</div>
-		</td>
-	</tr>
-	<tr style="border:1px solid black">
-		<td style="border:1px solid black">
-			<label>社團名稱</label>
-			<input class="form-control" name="group" required>
-		</td>
-		<td style="border:1px solid black">
-			<label>活動負責人</label>
-			<input class="form-control" name="leader" required>
-			<label>電話</label>
-			<input class="form-control" name="phone" required>
-		</td>
-	</tr>
-	<tr style="border:1px solid black">
-		<td style="border:1px solid black">
-			<label>指導老師</label>
-			<input class="form-control" name="teacher" required>
-		</td>
-		<td style="border:1px solid black">
-			<label>活動負責人2</label>
-			<input class="form-control" name="leader2" required>
-			<label>電話</label>
-			<input class="form-control" name="phone2" required>
-		</td>
-	</tr>
-</table>
-<label>活動內容(500字內 企劃書請附上連結)</label>
-<textarea class="form-control ckeditor" name="content" required cols="100" rows="20"></textarea> 
-<br>
-<input type="submit"  class="btn btn-primary"  id="submit" value="送出" style="float:right;">	
+			</td>
+		</tr>
+		<tr style="border:1px solid black">
+			<td style="border:1px solid black">
+				<label>社團名稱</label>
+				<label><?php echo $_SESSION['groups'];?></label>
+			</td>
+			<td style="border:1px solid black">
+				<label>活動負責人</label>
+				<input class="form-control" name="leader" required>
+				<label>電話</label>
+				<input class="form-control" name="phone" required>
+			</td>
+		</tr>
+		<tr style="border:1px solid black">
+			<td style="border:1px solid black">
+				<label>指導老師</label>
+				<input class="form-control" name="teacher" required>
+			</td>
+			<td style="border:1px solid black">
+				<label>活動負責人2</label>
+				<input class="form-control" name="leader2" required>
+				<label>電話</label>
+				<input class="form-control" name="phone2" required>
+			</td>
+		</tr>
+		<tr style="border:1px solid black">
+			<td style="border:1px solid black" colspan="2">
+				<label>企劃書</label>
+				<input class="form-control" size="100" name="plan" required>
+			</td>
+		</tr>
+	</table>
+	<label>備註留言(500字內)</label>
+	<textarea class="form-control ckeditor" name="content" required cols="100" rows="20"></textarea> 
+	<br>
+	<input type="submit"  class="btn btn-primary"  id="submit" value="送出" style="float:right;">	
 </form>
 <?php
 tail();
