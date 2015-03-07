@@ -123,8 +123,16 @@ if(!preg_match("/(https?:\/\/[\w-\.]+(:\d+)?(\/[~\w\/\.]*)?(\?\S*)?(#\S*)?)/",$p
 	echo "</script>";
 	exit;
 } 
-
-$sql = "UPDATE `event` SET `plan` = '{$plan}',`name` = '{$name}', `place` = '{$place}', `other` = '{$other}', `startdate` = '{$startdate}', `finishdate` = '{$finishdate}', `week` = '{$week}', `week2` = '{$week2}', `teacher` = '{$teacher}', `leader` = '{$leader}', `phone` = '{$phone}', `leader2` = '{$leader2}', `phone2` = '{$phone2}', `pass` = '2' WHERE `id` = '{$id}' ";
+if($row[startdate]!=$startdate||$row[finishdate]!=$finishdate||$row[place]!=$place){
+	$changesubmittime=1;
+}
+if($changesubmittime==1){
+	$now=date("Y-m-d H:i:s");
+	$sql = "UPDATE `event` SET `submittime` = '{$now}', `plan` = '{$plan}', `name` = '{$name}', `place` = '{$place}', `other` = '{$other}', `startdate` = '{$startdate}', `finishdate` = '{$finishdate}', `week` = '{$week}', `week2` = '{$week2}', `teacher` = '{$teacher}', `leader` = '{$leader}', `phone` = '{$phone}', `leader2` = '{$leader2}', `phone2` = '{$phone2}', `pass` = '2' WHERE `id` = '{$id}' ";
+}
+else{
+	$sql = "UPDATE `event` SET `plan` = '{$plan}',`name` = '{$name}', `place` = '{$place}', `other` = '{$other}', `startdate` = '{$startdate}', `finishdate` = '{$finishdate}', `week` = '{$week}', `week2` = '{$week2}', `teacher` = '{$teacher}', `leader` = '{$leader}', `phone` = '{$phone}', `leader2` = '{$leader2}', `phone2` = '{$phone2}', `pass` = '2' WHERE `id` = '{$id}' ";
+}
 $rs = $db->prepare($sql);
 $rs->execute();
 header("Location: ../show.php");
