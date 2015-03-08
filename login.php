@@ -15,8 +15,7 @@ head();
 <?php
 modalStart('forget');
 ?>
-忘記密碼請聯絡學生會<br>
-開放時間 星期一～五 12:00~13:00
+忘記密碼請聯絡學生會
 <?php
 modalEnd();
 tail();
